@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import { RouterProvider } from "react-router-dom";
+import routes from './routes/routes';
 
 function App() {
   return (
     <div className="App max-w-[1440px] mx-auto">
-      welcome typescript
+      <RouterProvider router={routes} />
     </div>
   );
 }
