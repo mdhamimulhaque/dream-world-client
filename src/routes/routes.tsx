@@ -14,7 +14,7 @@ const routes = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: '/category',
+                path: '/category/:id',
                 element: <Category />
             }
         ]

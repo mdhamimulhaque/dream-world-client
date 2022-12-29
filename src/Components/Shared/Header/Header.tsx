@@ -19,10 +19,10 @@ const Header = () => {
                 </Link>
                 {/* Navbar */}
                 <nav className="hidden md:ml-auto md:flex flex-wrap items-center justify-center text-base tracking-wide">
-                    <Link to="#link" className="mr-8 hover:text-gray-300">Solutions</Link>
-                    <Link to="#link" className="mr-8 hover:text-gray-300">Prices</Link>
-                    <Link to="#link" className="mr-8 hover:text-gray-300">About</Link>
-                    <Link to="#link" className="mr-8 hover:text-gray-300">Contact</Link>
+                    <Link to="/" className="mr-8 hover:text-green-500">Home</Link>
+                    <Link to="/category/:id" className="mr-8 hover:text-green-500">Category</Link>
+                    <Link to="#link" className="mr-8 hover:text-green-500">About Us</Link>
+                    <Link to="#link" className="mr-8 hover:text-green-500">Contact</Link>
                 </nav>
                 {/* Avatar */}
                 <div className="hidden relative sm:inline-flex ml-auto md:ml-0 mr-4 md:mr-0 cursor-pointer border-2 rounded-full border-green-300">
@@ -51,10 +51,10 @@ const Header = () => {
             {/* mobile menu */}
             {isOpen &&
                 <div className="w-full flex flex-col py-4 px-3 md:hidden bg-gray-900 text-base uppercase text-center font-semibold">
-                    <Link to="#link" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700">Solutions</Link>
-                    <Link to="#link" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700">Prices</Link>
-                    <Link to="#link" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700">About</Link>
-                    <Link to="#link" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700">Contact</Link>
+                    <Link to="/" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Home</Link>
+                    <Link to="/category/:id" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Category</Link>
+                    <Link to="#link" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">About</Link>
+                    <Link to="#link" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Contact</Link>
 
                     <div className="button_box px-3 py-2 rounded-md">
                         <Button>Login</Button>
