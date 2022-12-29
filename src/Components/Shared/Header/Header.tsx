@@ -35,8 +35,12 @@ const Header = () => {
                     {
                         isDropdownOpen &&
                         <div className='absolute z-50 top-9 right-0 bg-gray-800 rounded px-4 py-2'>
-                            <Link to='/author/login' className='mb-2 hover:text-green-300'>Login</Link>
-                            <div className='hover:text-green-300'>Registration</div>
+                            <div>
+                                <Link to='/author/login' className='mb-2 hover:text-green-300'>Login</Link>
+                            </div>
+                            <div>
+                                <Link to='/author/registration' className='mb-2 hover:text-green-300'>Registration</Link>
+                            </div>
                         </div>
                     }
 

@@ -7,6 +7,7 @@ import Category from '../Pages/Category/Category';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import PostDetails from '../Pages/PostDetails/PostDetails';
+import Registration from '../Pages/Registration/Registration';
 
 const routes = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ const routes = createBrowserRouter([
             {
                 path: '/author/login',
                 element: <Login />
+            },
+            {
+                path: '/author/registration',
+                element: <Registration />
             }
         ]
     },

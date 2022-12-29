@@ -5,7 +5,7 @@ import Logo from '../../img/logo.png';
 
 const Login = () => {
     return (
-        <section className="bg-green-50 py-20 lg:py-[120px]">
+        <section className="bg-green-100 py-20 lg:py-[120px]">
             <div className="container mx-auto">
                 <div className="-mx-4 flex flex-wrap">
                     <div className="w-full px-4">
@@ -22,7 +22,7 @@ const Login = () => {
                             <form>
                                 <div className="mb-6">
                                     <input
-                                        type="text"
+                                        type="email"
                                         placeholder="Email"
                                         className=" border-gray-300 w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                                     />
@@ -43,9 +43,9 @@ const Login = () => {
                                 <button className=' rounded border border-blue-500 hover:shadow-lg bg-blue-500 px-8 md:px-10 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:text-blue-800'>Google</button>
                                 <button className=' rounded border border-gray-800 hover:shadow-lg bg-gray-800 px-8 md:px-10 py-3 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring active:text-gray-800'>GitHub</button>
                             </div>
-                            <p className="text-base text-[#adadad]">
+                            <p className="text-base text-gray-800">
                                 Not a member yet?
-                                <Link to="/author/registration" className="text-green-300 ml-2 hover:underline">
+                                <Link to="/author/registration" className="text-green-400 ml-2 hover:underline">
                                     Registration
                                 </Link>
                             </p>
