@@ -69,9 +69,9 @@ const HomeSlider = () => {
                             <div className="slider_img relative before:absolute before:bg-black before:h-full before:w-full before:opacity-40">
                                 <img className='h-[400px] overflow-y-hidden lg:h-[350px] object-cover w-full' src={item?.img} alt="img" />
                             </div>
-                            <div className="slider_text text-gray-100 absolute top-[20%] md:top-[30%] left-[15%] w-3/4 mx-auto">
-                                <h2 className='text-lg md:text-xl lg:text-4xl font-bold'>{item?.title}</h2>
-                                <p>{item?.des}</p>
+                            <div className="slider_text text-gray-100 absolute top-[20%] md:top-[25%] lg:[top-20%] left-[15%] w-3/4 mx-auto">
+                                <h2 className='text-xl md:text-2xl lg:text-4xl md:w-9/12 mx-auto font-bold'>{item?.title}</h2>
+                                <p className='md:w-9/12 mx-auto'>{item?.des}</p>
                             </div>
                         </SwiperSlide>
                     )

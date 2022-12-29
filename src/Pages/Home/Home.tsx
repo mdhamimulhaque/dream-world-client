@@ -1,11 +1,15 @@
 import React from 'react';
-import HomeSlider from '../../Components/HomeSlider/HomeSlider';
+import HomeBlog from './HomeBlog/HomeBlog';
+import HomeSlider from './HomeSlider/HomeSlider';
 
 const Home = () => {
     return (
         <>
             <section className="slider_area">
                 <HomeSlider />
+            </section>
+            <section className='home_blog_wrapper'>
+                <HomeBlog />
             </section>
         </>
     );
