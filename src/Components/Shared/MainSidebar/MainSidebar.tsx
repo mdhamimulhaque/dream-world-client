@@ -8,7 +8,7 @@ import TagSection from '../../TagSection/TagSection';
 
 const MainSidebar = () => {
     return (
-        <div className='mx-4 lg:mx-0'>
+        <div className='mx-4 lg:mx-0 my-5'>
             {/* popular post */}
             <section className="popular_post_area bg-white p-2 mr-2 rounded">
                 <h2 className='text-lg text-gray-800'>Popular Post</h2>

@@ -6,7 +6,7 @@ import Tag from '../Tag/Tag';
 const PostCard = () => {
     return (
         <>
-            <div className="blog_card_area relative bg-white hover:shadow-lg duration-300 text-gray-800 shadow-sm p-5 md:p-10 rounded">
+            <div className="post_card_area relative bg-white hover:shadow-lg duration-300 text-gray-800 shadow-sm p-5 md:p-10 rounded">
                 {/* card header */}
                 <div className="card_header lg:flex gap-4">
                     <div className="header_img mb-3">
@@ -53,7 +53,7 @@ const PostCard = () => {
                         <h4 className='font-semibold'>Md Hamimul Haque</h4>
                     </div>
                 </div>
-                <Link to='/' className="button_box absolute bottom-[-20px] left-1/2 translate-x-[-50%]">
+                <Link to='/post/:id' className="button_box absolute bottom-[-20px] left-1/2 translate-x-[-50%]">
                     <button className='inline-block rounded border border-gray-800 hover:shadow-lg bg-gray-800 px-8 md:px-12 py-3 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring active:text-gray-800'>Read More</button>
                 </Link>
             </div>

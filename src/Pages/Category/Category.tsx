@@ -6,7 +6,7 @@ const Category = () => {
         <>
             {/* page title */}
             <div className='font-semibold px-4 mt-5'>
-                <h2 className='text-center text-green-500 text-5xl'>Technology</h2>
+                <h2 className='text-center text-green-500 text-4xl'>Technology</h2>
                 <h2 className="text-xl text-gray-800 ">Total : 20</h2>
             </div>
 
