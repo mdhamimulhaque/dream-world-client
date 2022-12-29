@@ -1,5 +1,5 @@
 import React from 'react';
-import { HiOutlineChatBubbleLeftRight, HiOutlineHeart } from "react-icons/hi2";
+import { HiOutlineChatBubbleLeftRight, HiOutlineHeart, HiOutlineCalendarDays } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 import Tag from '../Tag/Tag';
 
@@ -20,14 +20,18 @@ const PostCard = () => {
                         </span>
                         <h2 className='text-xl md:text-3xl font-semibold'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, numquam?</h2>
                         <div className="post_info flex gap-2 md:gap-3">
-                            <small>Published: 22/12/22</small> <span className='text-green-500'>-</span>
-                            <div className='flex gap-2 items-center'>
-                                <HiOutlineChatBubbleLeftRight className='text-green-500' />
-                                <small>55</small>
+                            <div className='flex gap-1 items-center'>
+                                <HiOutlineCalendarDays className='text-green-500' />
+                                <small className='text-xs'>22/12/22</small>
                             </div>
-                            <div className='flex gap-2 items-center'>
+                            <span className='text-green-500'>-</span>
+                            <div className='flex gap-1 items-center'>
+                                <HiOutlineChatBubbleLeftRight className='text-green-500' />
+                                <small className='text-xs'>55</small>
+                            </div>
+                            <div className='flex gap-1 items-center'>
                                 <HiOutlineHeart className='text-green-500' />
-                                <small>20</small>
+                                <small className='text-xs'>20</small>
                             </div>
                         </div>
                     </div>

@@ -20,9 +20,10 @@ const Header = () => {
                 {/* Navbar */}
                 <nav className="hidden md:ml-auto md:flex flex-wrap items-center justify-center text-base tracking-wide">
                     <Link to="/" className="mr-8 hover:text-green-500">Home</Link>
-                    <Link to="/category/:id" className="mr-8 hover:text-green-500">Category</Link>
+                    <Link to="/author" className="mr-8 hover:text-green-500">Author</Link>
                     <Link to="#link" className="mr-8 hover:text-green-500">About Us</Link>
                     <Link to="#link" className="mr-8 hover:text-green-500">Contact</Link>
+
                 </nav>
                 {/* Avatar */}
                 <div className="hidden relative sm:inline-flex ml-auto md:ml-0 mr-4 md:mr-0 cursor-pointer border-2 rounded-full border-green-300">
