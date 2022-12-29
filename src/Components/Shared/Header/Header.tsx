@@ -5,6 +5,7 @@ import uImg from '../../../img/mdhamimulhaque.jpg';
 import Button from '../../Button/Button';
 import { HiBars3BottomRight } from 'react-icons/hi2';
 
+
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -34,7 +35,7 @@ const Header = () => {
                     {
                         isDropdownOpen &&
                         <div className='absolute z-50 top-9 right-0 bg-gray-800 rounded px-4 py-2'>
-                            <div className='mb-2 hover:text-green-300'>Login</div>
+                            <Link to='/author/login' className='mb-2 hover:text-green-300'>Login</Link>
                             <div className='hover:text-green-300'>Registration</div>
                         </div>
                     }
