@@ -13,23 +13,23 @@ const Footer = () => {
                     <div className="py-4 px-2 flex">
                         <Link to="#link" className="text-gray-100">
                             <span className="sr-only">Facebook</span>
-                            <BsFacebook className='text-xl' />
+                            <BsFacebook className='text-xl duration-300 hover:text-green-500' />
                         </Link>
                         <Link to="#link" className="ml-3 text-gray-100">
                             <span className="sr-only">Twitter</span>
-                            <BsTwitter className='text-xl' />
+                            <BsTwitter className='text-xl duration-300 hover:text-green-500' />
                         </Link>
                         <Link to="#link" className="ml-3 text-gray-100">
                             <span className="sr-only">Instagram</span>
-                            <BsInstagram className='text-xl' />
+                            <BsInstagram className='text-xl duration-300 hover:text-green-500' />
                         </Link>
                         <Link to="#link" className="ml-3 text-gray-100">
                             <span className="sr-only">Linkedin</span>
-                            <BsLinkedin className='text-xl' />
+                            <BsLinkedin className='text-xl duration-300 hover:text-green-500' />
                         </Link>
                         <Link to="#link" className="ml-3 text-gray-100">
                             <span className="sr-only">GitHub</span>
-                            <BsGithub className='text-xl' />
+                            <BsGithub className='text-xl duration-300 hover:text-green-500' />
                         </Link>
                     </div>
 

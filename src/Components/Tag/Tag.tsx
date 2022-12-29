@@ -5,7 +5,7 @@ type Props = {
 
 const Tag = (props: Props) => {
     return (
-        <div className='px-3 py-2 bg-white shadow-lg text-center'>
+        <div className='px-3 py-2 bg-white shadow-lg hover:shadow-sm cursor-pointer duration-300 hover:text-green-500 text-center'>
             {props.children}
         </div>
     );

@@ -8,27 +8,35 @@ const CategorySection = () => {
             <ul className='category_items my-3'>
                 {/* item */}
                 <li className='category_item mb-2'>
-                    <Link to='#' className='flex items-center justify-between duration-300 hover:text-green-500'>
-                        <div className="category_name text-sm flex items-center flex-2">
-                            <HiOutlineChevronRight />   <span>item</span>
+                    <Link to='#' className='flex items-center justify-between '>
+                        <div className="category_name  flex items-center flex-2">
+                            <HiOutlineChevronRight className='text-green-500' />   <span className='text-gray-800 duration-300 hover:text-green-500'>item</span>
                         </div>
-                        <div className='text-xs'>(10)</div>
+                        <div className=' text-gray-800'>(10)</div>
                     </Link>
                 </li>
                 <li className='category_item mb-2'>
-                    <Link to='#' className='flex items-center justify-between duration-300 hover:text-green-500'>
-                        <div className="category_name text-sm flex items-center flex-2">
-                            <HiOutlineChevronRight />   <span>item</span>
+                    <Link to='#' className='flex items-center justify-between '>
+                        <div className="category_name  flex items-center flex-2">
+                            <HiOutlineChevronRight className='text-green-500' />   <span className='text-gray-800 duration-300 hover:text-green-500'>item</span>
                         </div>
-                        <div className='text-xs'>(10)</div>
+                        <div className=' text-gray-800'>(10)</div>
                     </Link>
                 </li>
                 <li className='category_item mb-2'>
-                    <Link to='#' className='flex items-center justify-between duration-300 hover:text-green-500'>
-                        <div className="category_name text-sm flex items-center flex-2">
-                            <HiOutlineChevronRight />   <span>item</span>
+                    <Link to='#' className='flex items-center justify-between '>
+                        <div className="category_name  flex items-center flex-2">
+                            <HiOutlineChevronRight className='text-green-500' />   <span className='text-gray-800 duration-300 hover:text-green-500'>item</span>
                         </div>
-                        <div className='text-xs'>(10)</div>
+                        <div className=' text-gray-800'>(10)</div>
+                    </Link>
+                </li>
+                <li className='category_item mb-2'>
+                    <Link to='#' className='flex items-center justify-between '>
+                        <div className="category_name  flex items-center flex-2">
+                            <HiOutlineChevronRight className='text-green-500' />   <span className='text-gray-800 duration-300 hover:text-green-500'>item</span>
+                        </div>
+                        <div className=' text-gray-800'>(10)</div>
                     </Link>
                 </li>
             </ul>
