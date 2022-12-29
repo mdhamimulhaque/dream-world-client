@@ -19,10 +19,10 @@ const Header = () => {
                 </Link>
                 {/* Navbar */}
                 <nav className="hidden md:ml-auto md:flex flex-wrap items-center justify-center text-base tracking-wide">
-                    <Link to="/" className="mr-8 hover:text-green-500">Home</Link>
-                    <Link to="/author" className="mr-8 hover:text-green-500">Author</Link>
-                    <Link to="#link" className="mr-8 hover:text-green-500">About Us</Link>
-                    <Link to="#link" className="mr-8 hover:text-green-500">Contact</Link>
+                    <Link to="/" className="mr-8 hover:text-green-400">Home</Link>
+                    <Link to="/author" className="mr-8 hover:text-green-400">Author</Link>
+                    <Link to="#link" className="mr-8 hover:text-green-400">About Us</Link>
+                    <Link to="#link" className="mr-8 hover:text-green-400">Contact</Link>
 
                 </nav>
                 {/* Avatar */}
@@ -33,7 +33,7 @@ const Header = () => {
                     />
                     {
                         isDropdownOpen &&
-                        <div className='absolute top-9 right-0 bg-gray-800 rounded px-4 py-2'>
+                        <div className='absolute z-50 top-9 right-0 bg-gray-800 rounded px-4 py-2'>
                             <div className='mb-2 hover:text-green-300'>Login</div>
                             <div className='hover:text-green-300'>Registration</div>
                         </div>
@@ -53,7 +53,7 @@ const Header = () => {
             {isOpen &&
                 <div className="w-full flex flex-col py-4 px-3 md:hidden bg-gray-900 text-base uppercase text-center font-semibold">
                     <Link to="/" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Home</Link>
-                    <Link to="/category/:id" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Category</Link>
+                    <Link to="/author" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Author</Link>
                     <Link to="#link" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">About</Link>
                     <Link to="#link" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Contact</Link>
 
