@@ -22,8 +22,8 @@ const Header = () => {
                 <nav className="hidden md:ml-auto md:flex flex-wrap items-center justify-center text-base tracking-wide">
                     <Link to="/" className="mr-8 hover:text-green-400">Home</Link>
                     <Link to="/author" className="mr-8 hover:text-green-400">Author</Link>
-                    <Link to="#link" className="mr-8 hover:text-green-400">About Us</Link>
-                    <Link to="#link" className="mr-8 hover:text-green-400">Contact</Link>
+                    <Link to="/about-us" className="mr-8 hover:text-green-400">About Us</Link>
+                    <Link to="/contact" className="mr-8 hover:text-green-400">Contact</Link>
 
                 </nav>
                 {/* Avatar */}
@@ -59,8 +59,8 @@ const Header = () => {
                 <div className="w-full flex flex-col py-4 px-3 md:hidden bg-gray-900 text-base uppercase text-center font-semibold">
                     <Link to="/" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Home</Link>
                     <Link to="/author" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Author</Link>
-                    <Link to="#link" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">About</Link>
-                    <Link to="#link" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Contact</Link>
+                    <Link to="/about-us" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">About</Link>
+                    <Link to="/contact" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Contact</Link>
 
                     <div className="button_box px-3 py-2 rounded-md">
                         <Button>Login</Button>

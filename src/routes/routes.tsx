@@ -2,8 +2,10 @@ import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Layout/Main';
 import Secondary from '../Layout/Secondary';
+import AboutUs from '../Pages/AboutUs/AboutUs';
 import Author from '../Pages/Author/Author';
 import Category from '../Pages/Category/Category';
+import Contact from '../Pages/Contact/Contact';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import PostDetails from '../Pages/PostDetails/PostDetails';
@@ -26,6 +28,14 @@ const routes = createBrowserRouter([
                 path: '/post/:id',
                 element: <PostDetails />
             },
+            {
+                path: '/about-us',
+                element: <AboutUs />
+            },
+            {
+                path: '/contact',
+                element: <Contact />
+            }
 
         ]
     },

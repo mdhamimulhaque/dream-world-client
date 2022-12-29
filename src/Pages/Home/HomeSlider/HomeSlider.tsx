@@ -27,25 +27,25 @@ const sliderItems: SliderItems = [
     {
         id: 2,
         img: 'https://images.pexels.com/photos/259915/pexels-photo-259915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?',
+        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         des: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?'
     },
     {
         id: 3,
         img: 'https://images.pexels.com/photos/259915/pexels-photo-259915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?',
+        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         des: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?'
     },
     {
         id: 4,
         img: 'https://images.pexels.com/photos/259915/pexels-photo-259915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?',
+        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         des: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?'
     },
     {
         id: 5,
         img: 'https://images.pexels.com/photos/259915/pexels-photo-259915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?',
+        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
         des: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?'
     }
 ]
@@ -69,8 +69,8 @@ const HomeSlider = () => {
                             <div className="slider_img relative before:absolute before:bg-black before:h-full before:w-full before:opacity-40">
                                 <img className='h-[400px] overflow-y-hidden lg:h-[350px] object-cover w-full' src={item?.img} alt="img" />
                             </div>
-                            <div className="slider_text text-gray-100 absolute top-[20%] md:top-[25%] lg:[top-20%] left-[15%] w-3/4 mx-auto">
-                                <h2 className='text-xl md:text-2xl lg:text-4xl md:w-9/12 mx-auto font-bold'>{item?.title}</h2>
+                            <div className="slider_text text-gray-100 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-3/4 mx-auto">
+                                <h2 className='text-2xl md:text-3xl lg:text-4xl md:w-9/12 mx-auto font-bold'>{item?.title}</h2>
                                 <p className='md:w-9/12 mx-auto'>{item?.des}</p>
                             </div>
                         </SwiperSlide>
