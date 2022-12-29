@@ -15,6 +15,9 @@ const PostCard = () => {
                         />
                     </div>
                     <div className="header_text leading-10">
+                        <span className="inline-flex bg-green-100 text-gray-800 rounded-full h-6 px-3 justify-center items-center">
+                            Technology
+                        </span>
                         <h2 className='text-xl md:text-3xl font-semibold'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, numquam?</h2>
                         <div className="post_info flex gap-2 md:gap-3">
                             <small>Published: 22/12/22</small> <span className='text-green-500'>-</span>
@@ -26,7 +29,6 @@ const PostCard = () => {
                                 <HiOutlineHeart className='text-green-500' />
                                 <small>20</small>
                             </div>
-
                         </div>
                     </div>
                 </div>

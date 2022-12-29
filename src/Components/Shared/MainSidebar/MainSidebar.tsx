@@ -1,5 +1,5 @@
 import React from 'react';
-import CategorySection from '../../CategorySection/CategorySection';
+import CategorySection from '../../SidebarCategory/SidebarCategory';
 import PopularPost from '../../PopularPost/PopularPost';
 import SocialBox from '../../SocialBox/SocialBox';
 import TagSection from '../../TagSection/TagSection';
