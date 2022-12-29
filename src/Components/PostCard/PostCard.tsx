@@ -6,7 +6,7 @@ import Tag from '../Tag/Tag';
 const PostCard = () => {
     return (
         <>
-            <div className="blog_card_area relative bg-white text-gray-800 shadow-lg p-5 md:p-10">
+            <div className="blog_card_area relative bg-white text-gray-800 shadow-lg p-5 md:p-10 rounded">
                 {/* card header */}
                 <div className="card_header lg:flex gap-4">
                     <div className="header_img mb-3">
@@ -35,7 +35,7 @@ const PostCard = () => {
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia accusantium rem pariatur architecto ut ducimus eaque minus provident fugiat. A!</p>
                 </div>
                 {/* card footer */}
-                <div className="card_footer lg:flex lg:justify-between ">
+                <div className="card_footer lg:flex lg:justify-between pb-2">
                     <div className="tag_area flex flex-wrap gap-2 my-4">
                         <Tag>Technology</Tag>
                         <Tag>Web</Tag>
@@ -52,7 +52,7 @@ const PostCard = () => {
                     </div>
                 </div>
                 <Link to='/' className="button_box absolute bottom-[-20px] left-1/2 translate-x-[-50%]">
-                    <button className='inline-block rounded border border-gray-800 bg-gray-800 px-12 py-3 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring active:text-gray-800'>Read More</button>
+                    <button className='inline-block rounded border border-gray-800 bg-gray-800 px-10 md:px-12 py-3 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring active:text-gray-800'>Read More</button>
                 </Link>
             </div>
 
