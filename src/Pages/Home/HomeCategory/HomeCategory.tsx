@@ -1,5 +1,6 @@
 import React from 'react';
 import { HiAcademicCap, HiOutlineLightBulb, HiGlobeAsiaAustralia, HiCursorArrowRipple, HiUserGroup } from "react-icons/hi2";
+import { Link } from 'react-router-dom';
 
 type Categories = {
     id: number;
@@ -31,16 +32,18 @@ const categories: Categories = [
 ]
 
 const HomeCategory: React.FC = () => {
+
     return (
         <>
             {
                 categories.map(categoryItem =>
-                    <div key={categoryItem?.id} className="home_category_box bg-green-100 shadow-sm hover:shadow hover:text-green-400 duration-300 cursor-pointer p-4 flex justify-center flex-col">
+                    <Link to={`/category/${categoryItem?.name}`} key={categoryItem?.id}
+                        className="home_category_box bg-green-100 shadow-sm hover:shadow hover:text-green-400 duration-300 cursor-pointer p-4 flex justify-center flex-col">
                         <span className='flex justify-center'>
                             {categoryItem?.icon}
                         </span>
                         <h3 className='text-2xl text-center duration-300'>{categoryItem?.name}</h3>
-                    </div>
+                    </Link>
                 )
             }
         </>

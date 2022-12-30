@@ -9,7 +9,6 @@ type Props = {
 }
 
 const PostCard = ({ pData }: Props) => {
-    // console.log(pData)
     const { _id, title, category, posted_date, description, tags, postImg, user } = pData;
 
     return (

@@ -4,22 +4,8 @@ import Tag from '../../Components/Tag/Tag';
 import { HiOutlineChevronRight } from "react-icons/hi2";
 import CommentBox from './CommentBox/CommentBox';
 import { useLoaderData } from 'react-router-dom';
+import { PostData } from '../Home/HomeBlog/HomeBlog';
 
-interface PostData {
-    _id: number,
-    title: string;
-    posted_date: string;
-    description: string;
-    tags?: (string)[] | null;
-    postImg: string;
-    user: User;
-    category: string;
-    email: string
-}
-interface User {
-    name: string;
-    userImg: string;
-}
 const PostDetails: React.FC = () => {
     const data = useLoaderData() as PostData;
     const { _id, title, category, posted_date, description, tags, postImg, user } = data;
