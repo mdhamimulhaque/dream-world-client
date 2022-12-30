@@ -13,10 +13,10 @@ const Category: React.FC = () => {
 
             {/* category card */}
             <div className='category_post container mx-auto px-4 flex flex-wrap flex-col gap-10 mb-10 mt-5'>
+                {/* <PostCard />
                 <PostCard />
                 <PostCard />
-                <PostCard />
-                <PostCard />
+                <PostCard /> */}
             </div>
         </>
 

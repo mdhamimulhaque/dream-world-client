@@ -1,28 +1,36 @@
 import React from 'react';
 import { HiOutlineChatBubbleLeftRight, HiOutlineHeart, HiOutlineCalendarDays } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
+import { PostData } from '../../Pages/Home/HomeBlog/HomeBlog';
 import Tag from '../Tag/Tag';
 
-const PostCard: React.FC = () => {
+type Props = {
+    pData: PostData;
+}
+
+const PostCard = ({ pData }: Props) => {
+    console.log(pData)
+    const { title, category, posted_date, description, tags, postImg, user } = pData;
+
     return (
         <>
             <div className="post_card_area relative bg-white hover:shadow-lg duration-300 text-gray-800 shadow-sm p-5 md:p-10 rounded">
                 {/* card header */}
                 <div className="card_header lg:flex gap-4">
                     <div className="header_img mb-3">
-                        <img src="https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=900" alt=""
+                        <img src={postImg} alt="img"
                             className='lg:w-52 lg:h-40 object-cover'
                         />
                     </div>
                     <div className="header_text leading-10">
                         <span className="inline-flex bg-green-100 text-gray-800 rounded-full h-6 px-3 justify-center items-center">
-                            Technology
+                            {category}
                         </span>
-                        <h2 className='text-xl md:text-3xl font-semibold'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, numquam?</h2>
+                        <h2 className='text-xl md:text-3xl font-semibold'>{title}</h2>
                         <div className="post_info flex gap-2 md:gap-3">
                             <div className='flex gap-1 items-center'>
                                 <HiOutlineCalendarDays className='text-green-500' />
-                                <small className='text-xs'>22/12/22</small>
+                                <small className='text-xs'>{posted_date}</small>
                             </div>
                             <span className='text-green-500'>-</span>
                             <div className='flex gap-1 items-center'>
@@ -38,23 +46,22 @@ const PostCard: React.FC = () => {
                 </div>
                 {/* card body */}
                 <div className="card_body my-4">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia accusantium rem pariatur architecto ut ducimus eaque minus provident fugiat. A!</p>
+                    <p>{description.slice(0, 200)}...</p>
                 </div>
                 {/* card footer */}
                 <div className="card_footer lg:flex lg:justify-between pb-2">
                     <div className="tag_area flex flex-wrap gap-2 my-4">
-                        <Tag>Technology</Tag>
-                        <Tag>Web</Tag>
-                        <Tag>Web</Tag>
-                        <Tag>Web</Tag>
-                        <Tag>Web</Tag>
+                        {
+                            tags?.map((tg, index) => <Tag key={index}>#{tg}</Tag>)
+                        }
+
                     </div>
                     <div className="post_owner_info flex gap-3 items-center">
-                        <img src="https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=900"
+                        <img src={user.userImg}
                             alt="userImg"
                             className='rounded-full w-10 h-10'
                         />
-                        <h4 className='font-semibold'>Md Hamimul Haque</h4>
+                        <h4 className='font-semibold'>{user.name}</h4>
                     </div>
                 </div>
                 <Link to='/post/:id' className="button_box absolute bottom-[-20px] left-1/2 translate-x-[-50%]">

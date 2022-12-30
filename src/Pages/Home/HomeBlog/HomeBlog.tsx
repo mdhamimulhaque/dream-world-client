@@ -1,24 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import PostCard from '../../../Components/PostCard/PostCard';
 
-type PostData = {
+export interface PostData {
     title: string;
     posted_date: string;
     description: string;
-    tags: string[];
+    tags?: (string)[] | null;
     postImg: string;
-    user: {
-        name: string;
-        userImg: string
-    }
-}[]
+    user: User;
+    category: string
+}
+export interface User {
+    name: string;
+    userImg: string;
+}
+
 
 
 const HomeBlog: React.FC = () => {
-    const [postData, setPostData] = useState<PostData>([] as PostData);
+    const [postData, setPostData] = useState<PostData[]>([]);
 
     useEffect(() => {
-        fetch(`data.json`)
+        fetch(`PostData.json`)
             .then(res => res.json())
             .then(data => setPostData(data))
     }, [])
@@ -26,7 +29,7 @@ const HomeBlog: React.FC = () => {
     return (
         <div className='container mx-auto px-4 flex flex-wrap flex-col gap-10 my-10'>
             {
-                postData.map(pData => <PostCard />)
+                postData.map(pData => <PostCard pData={pData} />)
             }
         </div>
     );
