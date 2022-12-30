@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PostCard from '../../../Components/PostCard/PostCard';
 
 export interface PostData {
+    _id: number,
     title: string;
     posted_date: string;
     description: string;

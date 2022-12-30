@@ -3,33 +3,51 @@ import { HiOutlineChatBubbleLeftRight, HiOutlineHeart } from "react-icons/hi2";
 import Tag from '../../Components/Tag/Tag';
 import { HiOutlineChevronRight } from "react-icons/hi2";
 import CommentBox from './CommentBox/CommentBox';
+import { useLoaderData } from 'react-router-dom';
 
+interface PostData {
+    _id: number,
+    title: string;
+    posted_date: string;
+    description: string;
+    tags?: (string)[] | null;
+    postImg: string;
+    user: User;
+    category: string;
+    email: string
+}
+interface User {
+    name: string;
+    userImg: string;
+}
 const PostDetails: React.FC = () => {
+    const data = useLoaderData() as PostData;
+    const { _id, title, category, posted_date, description, tags, postImg, user } = data;
     return (
         <>
             <div className="blog_card_area text-gray-800  p-5 md:p-10 rounded">
                 {/* card header */}
                 <div className="card_header ">
                     <div className="header_img  mb-3">
-                        <img src="https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=900" alt=""
+                        <img src={postImg} alt="img"
                             className='h-60 w-full lg:h-80 object-cover'
                         />
                     </div>
                     <div className="header_text leading-10">
                         <span className="inline-flex bg-green-100 text-gray-800 rounded-full h-6 px-3 justify-center items-center">
-                            Technology
+                            {category}
                         </span>
-                        <h2 className='text-xl md:text-3xl font-semibold'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam, numquam?</h2>
+                        <h2 className='text-xl md:text-3xl font-semibold'>{title}</h2>
                         {/* user-published */}
                         <div className="post_owner_info flex flex-wrap  gap-2 mt-3">
-                            <img src="https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=900"
+                            <img src={user?.userImg}
                                 alt="userImg"
                                 className='rounded-full w-8 h-8'
                             />
                             <div className='flex flex-wrap items-center'>
-                                <p className='text-sm'>Md Hamimul Haque</p>
+                                <p className='text-sm'>{user?.name}</p>
                                 <HiOutlineChevronRight className='text-green-500' />
-                                <p className='leading-2 text-sm'> 22/12/22</p>
+                                <p className='leading-2 text-sm'>{posted_date}</p>
                                 <HiOutlineChevronRight className='text-green-500' />
                                 <div className="post_info flex gap-2 md:gap-3">
 
@@ -48,16 +66,14 @@ const PostDetails: React.FC = () => {
                 </div>
                 {/* card body */}
                 <div className="card_body my-4">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia accusantium rem pariatur architecto ut ducimus eaque minus provident fugiat. A!</p>
+                    <p>{description}</p>
                 </div>
                 {/* card footer */}
                 <div className="card_footer lg:flex lg:justify-between pb-2">
                     <div className="tag_area flex flex-wrap gap-2 my-4">
-                        <Tag>Technology</Tag>
-                        <Tag>Web</Tag>
-                        <Tag>Web</Tag>
-                        <Tag>Web</Tag>
-                        <Tag>Web</Tag>
+                        {
+                            tags?.map((tg, index) => <Tag key={index}>#{tg}</Tag>)
+                        }
                     </div>
                 </div>
 
