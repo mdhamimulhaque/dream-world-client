@@ -1,7 +1,7 @@
 import React from 'react';
 import PostCard from '../../Components/PostCard/PostCard';
 
-const Category = () => {
+const Category: React.FC = () => {
     return (
         <>
             {/* page title */}

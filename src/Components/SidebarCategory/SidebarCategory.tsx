@@ -2,7 +2,7 @@ import React from 'react';
 import { HiOutlineChevronRight } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 
-const CategorySection = () => {
+const CategorySection: React.FC = () => {
     return (
         <>
             <ul className='category_items my-3'>

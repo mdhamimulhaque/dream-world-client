@@ -4,7 +4,7 @@ import Tag from '../../Components/Tag/Tag';
 import { HiOutlineChevronRight } from "react-icons/hi2";
 import CommentBox from './CommentBox/CommentBox';
 
-const PostDetails = () => {
+const PostDetails: React.FC = () => {
     return (
         <>
             <div className="blog_card_area text-gray-800  p-5 md:p-10 rounded">

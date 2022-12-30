@@ -2,7 +2,7 @@ import React from 'react';
 import { HiAcademicCap, HiGlobeAsiaAustralia, HiCursorArrowRipple, HiUserGroup } from "react-icons/hi2";
 
 
-const HomeCategory = () => {
+const HomeCategory: React.FC = () => {
     return (
         <>
             <div className="home_category_box bg-green-100 shadow-sm hover:shadow hover:text-green-400 duration-300 cursor-pointer p-4 flex justify-center flex-col">

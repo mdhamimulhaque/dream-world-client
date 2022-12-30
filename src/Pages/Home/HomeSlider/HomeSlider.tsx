@@ -20,37 +20,25 @@ type SliderItems = {
 const sliderItems: SliderItems = [
     {
         id: 1,
-        img: 'https://images.pexels.com/photos/259915/pexels-photo-259915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?',
-        des: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?'
+        img: 'https://img.freepik.com/free-vector/digital-global-connection-network-technology-background_1017-23324.jpg?w=1380&t=st=1672374189~exp=1672374789~hmac=141f798f611907f40f2fae6cdc0bbe5eced5eacb3aab6ff75d689b2f8fcf77ba',
+        title: 'The spectacle before us was indeed sublime',
+        des: 'It’s great to have you here. We know that first impressions are important, so we’ve populated your new site with some initial.'
     },
     {
         id: 2,
-        img: 'https://images.pexels.com/photos/259915/pexels-photo-259915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        des: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?'
+        img: 'https://img.freepik.com/free-photo/book-library-with-open-textbook_1150-5920.jpg?w=996&t=st=1672374482~exp=1672375082~hmac=ac81c11a340b600de4dc584a4afcdab69f544cb44e72e69d720ccb9a7d036e5b',
+        title: 'Better education equals a better nation',
+        des: 'Be educated and feel empowered. Education makes the world a better place. Share your knowledge to help people.'
     },
     {
         id: 3,
-        img: 'https://images.pexels.com/photos/259915/pexels-photo-259915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        des: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?'
-    },
-    {
-        id: 4,
-        img: 'https://images.pexels.com/photos/259915/pexels-photo-259915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        des: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?'
-    },
-    {
-        id: 5,
-        img: 'https://images.pexels.com/photos/259915/pexels-photo-259915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-        des: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat?'
+        img: 'https://img.freepik.com/free-photo/sports-tools_53876-138077.jpg?w=1060&t=st=1672374796~exp=1672375396~hmac=daf1be3f206c3de05d13cdcdf39b7363c80e9d57948f79f25ec5df4b6d0d5251',
+        title: 'Go, Fight, Win!',
+        des: 'Find breaking news, features and analysis on the NFL, NBA, MLB, golf, tennis, soccer, NCAA, NHL, World Series, Super Bowl, Olympics, World Cup and more.'
     }
 ]
 
-const HomeSlider = () => {
+const HomeSlider: React.FC = () => {
     return (
         <div>
             <Swiper

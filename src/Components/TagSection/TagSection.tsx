@@ -1,7 +1,7 @@
 import React from 'react';
 import Tag from '../Tag/Tag';
 
-const TagSection = () => {
+const TagSection: React.FC = () => {
     return (
         <div className='flex flex-wrap gap-2 mb-2 justify-center'>
             <Tag>Mobile</Tag>

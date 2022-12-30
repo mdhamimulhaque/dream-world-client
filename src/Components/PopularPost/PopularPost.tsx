@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PopularPost = () => {
+const PopularPost: React.FC = () => {
     return (
         <div className='flex gap-2 my-3'>
             <img src="https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=900" alt="img"

@@ -6,7 +6,7 @@ import Button from '../../Button/Button';
 import { HiBars3BottomRight } from 'react-icons/hi2';
 
 
-const Header = () => {
+const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     return (
@@ -16,7 +16,7 @@ const Header = () => {
                 {/* logo */}
                 <Link to="/" className="flex flex-shrink-0 title-font font-medium items-center text-gray-900 md:mb-0">
                     <img className='w-8' src={logo} alt="img" />
-                    <span className="ml-3 text-xl text-gray-100 font-semibold antialiased">Dream World</span>
+                    <span className="ml-3 text-xl text-gray-100 font-semibold antialiased">KnowledgeTunes</span>
                 </Link>
                 {/* Navbar */}
                 <nav className="hidden md:ml-auto md:flex flex-wrap items-center justify-center text-base tracking-wide">

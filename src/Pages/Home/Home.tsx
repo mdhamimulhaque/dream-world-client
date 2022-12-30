@@ -4,7 +4,7 @@ import HomeCategory from './HomeCategory/HomeCategory';
 import HomeSlider from './HomeSlider/HomeSlider';
 
 
-const Home = () => {
+const Home: React.FC = () => {
     return (
         <>
             <section className="slider_area">

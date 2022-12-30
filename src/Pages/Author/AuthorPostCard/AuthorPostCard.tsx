@@ -1,7 +1,7 @@
 import React from 'react';
 import { HiOutlinePencilSquare, HiOutlineArchiveBoxXMark, HiOutlineCalendarDays, HiOutlineChatBubbleLeftRight, HiOutlineHeart } from "react-icons/hi2";
 
-const AuthorPostCard = () => {
+const AuthorPostCard: React.FC = () => {
     return (
         <div className="mb-4 p-0 sm:p-4 col-span-12 md:col-span-6 lg:col-span-3 gap-2">
             <div className="group h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-sm hover:shadow-lg">

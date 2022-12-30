@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from '../../Components/Button/Button';
 import Logo from '../../img/logo.png';
 
-const Login = () => {
+const Login: React.FC = () => {
     return (
         <section className="bg-green-100 py-20 lg:py-[120px]">
             <div className="container mx-auto">
@@ -16,7 +15,7 @@ const Login = () => {
                             <Link to="/"
                                 className="cursor-pointer flex justify-center gap-2 text-gray-800 mb-5 items-center"
                             >
-                                <img src={Logo} alt="logo" className='w-10' /> <span className='font-semibold text-xl '>Dream World</span>
+                                <img src={Logo} alt="logo" className='w-10' /> <span className='font-semibold text-xl '>KnowledgeTunes</span>
                             </Link>
 
                             <form>

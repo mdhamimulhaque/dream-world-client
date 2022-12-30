@@ -4,7 +4,7 @@ import Footer from '../Components/Shared/Footer/Footer';
 import Header from '../Components/Shared/Header/Header';
 import MainSidebar from '../Components/Shared/MainSidebar/MainSidebar';
 
-const Main = () => {
+const Main: React.FC = () => {
     return (
         <div>
             <header className="w-full bg-gray-800 text-gray-100 body-font shadow-sm">

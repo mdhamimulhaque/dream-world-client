@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Error = () => {
+const Error: React.FC = () => {
     return (
         <section className="bg-primary relative z-10 py-[120px]">
             <div className="container mx-auto">

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../img/logo.png';
 
-const Registration = () => {
+const Registration: React.FC = () => {
     return (
         <div className="w-full bg-green-100">
             <div className="flex min-h-screen flex-col items-center pt-6 sm:justify-center sm:pt-0">
@@ -11,7 +11,7 @@ const Registration = () => {
                         <Link to="/"
                             className="cursor-pointer flex justify-center gap-2 text-gray-800 mb-5 items-center"
                         >
-                            <img src={Logo} alt="logo" className='w-10' /> <span className='font-semibold text-xl '>Dream World</span>
+                            <img src={Logo} alt="logo" className='w-10' /> <span className='font-semibold text-xl '>KnowledgeTunes</span>
                         </Link>
 
                     </div>

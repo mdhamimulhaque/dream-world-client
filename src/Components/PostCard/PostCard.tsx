@@ -3,7 +3,7 @@ import { HiOutlineChatBubbleLeftRight, HiOutlineHeart, HiOutlineCalendarDays } f
 import { Link } from 'react-router-dom';
 import Tag from '../Tag/Tag';
 
-const PostCard = () => {
+const PostCard: React.FC = () => {
     return (
         <>
             <div className="post_card_area relative bg-white hover:shadow-lg duration-300 text-gray-800 shadow-sm p-5 md:p-10 rounded">

@@ -1,9 +1,7 @@
 import React from 'react';
-import Footer from '../../Components/Shared/Footer/Footer';
-import Header from '../../Components/Shared/Header/Header';
 import AuthorPostCard from './AuthorPostCard/AuthorPostCard';
 
-const Author = () => {
+const Author: React.FC = () => {
     return (
         <main>
             <div className="author_info p-5 bg-green-50">

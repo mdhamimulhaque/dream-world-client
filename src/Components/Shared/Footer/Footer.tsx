@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsFacebook, BsGithub, BsLinkedin, BsInstagram, BsTwitter, BsFillEnvelopeFill, BsFillTelephoneFill } from 'react-icons/bs';
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <>
             <h2 className="sr-only">Footer</h2>

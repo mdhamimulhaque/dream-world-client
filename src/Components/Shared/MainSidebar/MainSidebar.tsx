@@ -6,7 +6,7 @@ import TagSection from '../../TagSection/TagSection';
 
 
 
-const MainSidebar = () => {
+const MainSidebar: React.FC = () => {
     return (
         <div className='mx-4 lg:mx-0 my-5'>
             {/* popular post */}

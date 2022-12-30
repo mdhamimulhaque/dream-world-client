@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const CommentBox = () => {
+const CommentBox: React.FC = () => {
     return (
         <div className="post_owner_info mt-3 p-4 border border-green-200 rounded">
             <div className='flex items-center gap-2'>

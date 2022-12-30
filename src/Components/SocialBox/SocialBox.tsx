@@ -3,14 +3,14 @@ import Logo from '../../img/logo.png';
 import { Link } from 'react-router-dom';
 import { BsFacebook, BsGithub, BsLinkedin, BsInstagram, BsTwitter } from 'react-icons/bs';
 
-const SocialBox = () => {
+const SocialBox: React.FC = () => {
     return (
         <>
             <div className="site_logo flex items-center gap-2">
                 <img src={Logo} alt="img"
                     className='w-10'
                 />
-                <span className='text-2xl'>Dream World</span>
+                <span className='text-2xl'>KnowledgeTunes</span>
             </div>
             <p className='my-2'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet.</p>
             <div className="social_box flex justify-center">
