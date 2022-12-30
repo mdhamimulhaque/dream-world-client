@@ -53,7 +53,7 @@ const HomeSlider: React.FC = () => {
             >
                 {
                     sliderItems.map(item =>
-                        <SwiperSlide>
+                        <SwiperSlide key={item?.id}>
                             <div className="slider_img relative before:absolute before:bg-black before:h-full before:w-full before:opacity-40">
                                 <img className='h-[400px] overflow-y-hidden lg:h-[350px] object-cover w-full' src={item?.img} alt="img" />
                             </div>
