@@ -1,5 +1,5 @@
 import React from 'react';
-import { HiAcademicCap, HiGlobeAsiaAustralia, HiCursorArrowRipple, HiUserGroup } from "react-icons/hi2";
+import { HiAcademicCap, HiOutlineLightBulb, HiGlobeAsiaAustralia, HiCursorArrowRipple, HiUserGroup } from "react-icons/hi2";
 
 type Categories = {
     id: number;
@@ -15,8 +15,8 @@ const categories: Categories = [
     },
     {
         id: 2,
-        icon: <HiAcademicCap className='text-5xl duration-300 text-green-300' />,
-        name: 'Academic'
+        icon: <HiOutlineLightBulb className='text-5xl duration-300 text-green-300' />,
+        name: 'Science'
     },
     {
         id: 3,

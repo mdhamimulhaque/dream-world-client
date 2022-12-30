@@ -20,7 +20,7 @@ const CategorySection: React.FC = () => {
                     <Link to='#' className='flex items-center justify-between '>
                         <div className="category_name  flex items-center flex-2">
                             <HiOutlineChevronRight className='text-green-500' />
-                            <span className='text-gray-800 duration-300 hover:text-green-500'>Academic</span>
+                            <span className='text-gray-800 duration-300 hover:text-green-500'>Science</span>
                         </div>
                         <div className=' text-gray-800'>(10)</div>
                     </Link>
