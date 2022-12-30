@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Layout/Main';
 import Secondary from '../Layout/Secondary';
 import AboutUs from '../Pages/AboutUs/AboutUs';
+import AllPosts from '../Pages/AllPosts/AllPosts';
 import Author from '../Pages/Author/Author';
 import Category from '../Pages/Category/Category';
 import Contact from '../Pages/Contact/Contact';
@@ -19,6 +20,11 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />
+            },
+            {
+                path: '/all-posts',
+                loader: () => fetch(`http://localhost:5000/posts`),
+                element: <AllPosts />
             },
             {
                 path: '/category/:name',

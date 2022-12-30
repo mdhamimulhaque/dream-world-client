@@ -3,13 +3,13 @@ import { useLoaderData } from 'react-router-dom';
 import PostCard from '../../Components/PostCard/PostCard';
 import { PostData } from '../Home/HomeBlog/HomeBlog';
 
-const Category: React.FC = () => {
+const AllPosts = () => {
     const postData = useLoaderData() as PostData[];
     return (
         <>
             {/* page title */}
             <div className='font-semibold px-4 mt-5'>
-                <h2 className='text-center text-green-500 text-4xl'>{postData[0].category}</h2>
+                <h2 className='text-center text-green-500 text-4xl'>All Posts</h2>
                 <h2 className="text-xl text-gray-800 ">Total : {postData.length}</h2>
             </div>
 
@@ -25,4 +25,4 @@ const Category: React.FC = () => {
     );
 };
 
-export default Category;
+export default AllPosts;

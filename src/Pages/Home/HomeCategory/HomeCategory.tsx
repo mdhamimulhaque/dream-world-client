@@ -46,6 +46,7 @@ const HomeCategory: React.FC = () => {
                     </Link>
                 )
             }
+
         </>
     );
 };

@@ -64,7 +64,7 @@ const PostCard = ({ pData }: Props) => {
                     </div>
                 </div>
                 <Link to={`/post/${_id}`} className="button_box absolute bottom-[-20px] left-1/2 translate-x-[-50%]">
-                    <button className='inline-block rounded border border-gray-800 hover:shadow-lg bg-gray-800 px-8 md:px-12 py-3 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring active:text-gray-800'>Read More</button>
+                    <button className='inline-block rounded border border-gray-800 hover:shadow-lg bg-gray-800 px-8 md:px-12 py-3 text-sm font-medium text-white hover:bg-gray-600 focus:outline-none focus:ring active:text-gray-800'>Details</button>
                 </Link>
             </div>
 
