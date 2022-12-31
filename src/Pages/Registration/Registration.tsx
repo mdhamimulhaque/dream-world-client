@@ -1,7 +1,9 @@
-import React from 'react';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { SubmitHandler } from 'react-hook-form/dist/types';
 import { Link } from 'react-router-dom';
+import { auth, AuthContext } from '../../Context/AuthProvider';
 import Logo from '../../img/logo.png';
 
 // ---> react hook form
@@ -13,9 +15,78 @@ type Inputs = {
 }
 
 const Registration: React.FC = () => {
-
+    const { loading, setLoading, user, setUser } = useContext(AuthContext);
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
-    const registrationSubmit: SubmitHandler<Inputs> = data => console.log(data);
+    const registrationSubmit: SubmitHandler<Inputs> = data => {
+        // ---> handle img upload file
+        const image = data.userImg[0];
+        const formData = new FormData();
+        formData.append("image", image);
+
+        const url = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_imgbb_key}`;
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(imgData => {
+                if (imgData.success === true) {
+                    // ---> handle registration (create user)
+                    createUserWithEmailAndPassword(auth, data.email, data.password)
+                        .then(res => {
+                            const fullName = data.fullName;
+                            const email = data.email;
+                            const password = data.password;
+                            const userImg = imgData.data.url;
+
+                            // --->pass UserInfo 
+                            if (res?.user?.email) {
+                                saveUserInfoToDatabase(fullName, email, userImg)
+                            }
+
+                        })
+                        .catch(err => console.log(err))
+                }
+            }).catch(err => console.log(err))
+    };
+
+    // ===> save user info to database
+    const saveUserInfoToDatabase = (fullName: string, email: string, userImg: string) => {
+        // -->(((((removable)))))
+        const userOptional = {
+            displayName: fullName,
+            photoURL: userImg,
+            email: email
+        }
+        setUser(userOptional)
+        // -->((((((()))))))
+
+        // ---> save userInfo to Database
+        const userInfo = {
+            fullName,
+            email,
+            userImg,
+            role: 'user',
+            verified: false,
+        }
+
+        fetch(`http://localhost:5000/users`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.upsertedCount > 0 || data.matchedCount > 0) {
+                    console.log("registration successfully")
+                }
+
+            })
+            .catch(err => console.log(err))
+
+    }
 
     return (
         <div className="w-full bg-green-100">

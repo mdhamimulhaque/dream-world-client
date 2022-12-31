@@ -16,12 +16,13 @@ const Login: React.FC = () => {
     const handleGoogleLogIn = async () => {
         signInWithPopup(auth, provider)
             .then(res => {
-                setUser(res?.user)
+                setUser(res?.user);
+
             })
             .catch(err => console.log(err))
     }
 
-
+    console.log(user)
     return (
         <section className="bg-green-100 py-20 lg:py-[120px]">
             <div className="container mx-auto">

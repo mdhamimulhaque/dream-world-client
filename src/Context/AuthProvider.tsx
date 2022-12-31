@@ -15,7 +15,7 @@ export interface ContextValueInterface {
 }
 
 export const AuthContext = createContext<ContextValueInterface>({} as ContextValueInterface)
-const auth = getAuth(app)
+export const auth = getAuth(app)
 const AuthProvider = ({ children }: ContextProps) => {
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState<any | null>(null);
