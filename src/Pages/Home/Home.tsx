@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthProvider';
 import HomeBlog from './HomeBlog/HomeBlog';
 import HomeCategory from './HomeCategory/HomeCategory';
 import HomeSlider from './HomeSlider/HomeSlider';
+
 
 
 const Home: React.FC = () => {

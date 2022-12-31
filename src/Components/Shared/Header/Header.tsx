@@ -1,14 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../img/logo.png';
 import uImg from '../../../img/mdhamimulhaque.jpg';
 import Button from '../../Button/Button';
 import { HiBars3BottomRight } from 'react-icons/hi2';
+import { getAuth, signOut } from 'firebase/auth';
+import { app } from '../../../Firebase/FirebaseConfig';
+import { AuthContext } from '../../../Context/AuthProvider';
 
+const auth = getAuth(app);
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const { user } = useContext(AuthContext);
+    // --->handleLogOut
+    const handleLogOut = async () => {
+
+        signOut(auth)
+            .then(() => {
+                console.log('logout successfully')
+            }).catch((error) => {
+                console.log(error)
+            });
+    }
     return (
         <>
             {/* main menu */}
@@ -37,12 +52,25 @@ const Header: React.FC = () => {
                     {
                         isDropdownOpen &&
                         <div className='absolute z-50 top-9 right-0 bg-gray-800 rounded px-4 py-2'>
-                            <div>
-                                <Link to='/author/login' className='mb-2 hover:text-green-300'>Login</Link>
-                            </div>
-                            <div>
-                                <Link to='/author/registration' className='mb-2 hover:text-green-300'>Registration</Link>
-                            </div>
+                            {
+                                !user?.email ?
+                                    <>
+                                        <div>
+                                            <Link to='/author/login' className='mb-2 hover:text-green-300'>Login</Link>
+                                        </div>
+                                        <div>
+                                            <Link to='/author/registration' className='mb-2 hover:text-green-300'>Registration</Link>
+                                        </div>
+                                    </> :
+                                    <div>
+                                        <Link to='/'
+                                            className='mb-2 hover:text-red-300'
+                                            onClick={handleLogOut}
+                                        >
+                                            LogOut
+                                        </Link>
+                                    </div>
+                            }
                         </div>
                     }
 
@@ -66,12 +94,25 @@ const Header: React.FC = () => {
                     <Link to="/contact" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Contact</Link>
 
 
-                    <div className="button_box px-3 py-2 rounded-md">
-                        <Button>Login</Button>
-                    </div>
-                    <div className="button_box px-3 py-2 rounded-md">
-                        <Button>Registration</Button>
-                    </div>
+                    {
+                        !user?.email ?
+                            <>
+                                <div className="button_box px-3 py-2 rounded-md">
+                                    <Link to='/author/login'><Button>Login</Button></Link>
+                                </div>
+                                <div className="button_box px-3 py-2 rounded-md">
+                                    <Link to='/author/registration'><Button>Registration</Button></Link>
+                                </div>
+                            </> :
+                            <div className="button_box px-3 py-2 rounded-md">
+                                <Link to='/'
+                                    onClick={handleLogOut}
+                                    className='inline-block rounded border border-red-500 bg-red-500 px-12 py-3 text-sm font-medium text-white hover:bg-red-400 focus:outline-none focus:ring active:text-red-500'>
+                                    LogOut
+                                </Link>
+                            </div>
+                    }
+
                 </div>
             }
 
