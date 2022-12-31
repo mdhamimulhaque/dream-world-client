@@ -1,18 +1,40 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../img/logo.png';
 import { FaGofore, FaGithub } from "react-icons/fa";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { app } from '../../Firebase/FirebaseConfig';
 import { AuthContext } from '../../Context/AuthProvider';
+import { useForm } from 'react-hook-form';
+import { SubmitHandler } from 'react-hook-form/dist/types';
+
+type Inputs = {
+    email: string;
+    password: any;
+}
 
 
 const auth = getAuth(app);
 
 const Login: React.FC = () => {
     const { loading, setLoading, user, setUser } = useContext(AuthContext);
-    const provider = new GoogleAuthProvider();
+    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+    const navigate = useNavigate();
+    // --->handle formlogin
+    const loginSubmit: SubmitHandler<Inputs> = data => {
+        signInWithEmailAndPassword(auth, data.email, data.password)
+            .then(res => {
+                if (res?.user?.email) {
+                    navigate('/')
+                    console.log('login successfully')
+                }
+            }).catch(err => console.log(err))
+    }
+
+
+
     // --->google login
+    const provider = new GoogleAuthProvider();
     const handleGoogleLogIn = async () => {
         signInWithPopup(auth, provider)
             .then(res => {
@@ -71,10 +93,11 @@ const Login: React.FC = () => {
                                 <img src={Logo} alt="logo" className='w-10' /> <span className='font-semibold text-xl '>KnowledgeTunes</span>
                             </Link>
 
-                            <form>
+                            <form onSubmit={handleSubmit(loginSubmit)}>
                                 <div className="mb-6">
                                     <input
                                         type="email"
+                                        {...register("email")}
                                         placeholder="Email"
                                         className=" border-gray-300 w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                                     />
@@ -82,6 +105,7 @@ const Login: React.FC = () => {
                                 <div className="mb-6">
                                     <input
                                         type="password"
+                                        {...register("password")}
                                         placeholder="Password"
                                         className=" border-gray-300 w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                                     />

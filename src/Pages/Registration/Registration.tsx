@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { SubmitHandler } from 'react-hook-form/dist/types';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth, AuthContext } from '../../Context/AuthProvider';
 import Logo from '../../img/logo.png';
 
@@ -16,6 +16,7 @@ type Inputs = {
 
 const Registration: React.FC = () => {
     const { loading, setLoading, user, setUser } = useContext(AuthContext);
+    const navigate = useNavigate()
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
     const registrationSubmit: SubmitHandler<Inputs> = data => {
         // ---> handle img upload file
@@ -80,6 +81,7 @@ const Registration: React.FC = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged === true) {
+                    navigate('/')
                     console.log("registration successfully")
                 }
 
@@ -136,7 +138,8 @@ const Registration: React.FC = () => {
 
                         </div>
                         <div className="mb-10">
-                            <button className='w-full rounded border border-green-500 hover:shadow-lg bg-green-500 px-8 md:px-10 py-3 text-sm font-medium text-white hover:bg-green-600 focus:outline-none focus:ring active:text-green-500'>Registration</button>
+                            <button type='submit' className='w-full rounded border border-green-500 hover:shadow-lg bg-green-500 px-8 md:px-10 py-3 text-sm font-medium text-white hover:bg-green-600 focus:outline-none focus:ring active:text-green-500'>
+                                Registration</button>
                         </div>
                     </form>
                     <p className="text-base text-gray-800 text-center">
