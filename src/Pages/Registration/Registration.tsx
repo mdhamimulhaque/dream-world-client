@@ -1,8 +1,22 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import { SubmitHandler } from 'react-hook-form/dist/types';
 import { Link } from 'react-router-dom';
 import Logo from '../../img/logo.png';
 
+// ---> react hook form
+type Inputs = {
+    fullName: string;
+    email: string;
+    password: any;
+    userImg: string;
+}
+
 const Registration: React.FC = () => {
+
+    const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+    const registrationSubmit: SubmitHandler<Inputs> = data => console.log(data);
+
     return (
         <div className="w-full bg-green-100">
             <div className="flex min-h-screen flex-col items-center pt-6 sm:justify-center sm:pt-0">
@@ -16,10 +30,11 @@ const Registration: React.FC = () => {
 
                     </div>
 
-                    <form>
+                    <form onSubmit={handleSubmit(registrationSubmit)}>
                         <div className="mb-6">
                             <input
                                 type="text"
+                                {...register("fullName")}
                                 placeholder="Full Name"
                                 className=" border-gray-300 w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                             />
@@ -27,6 +42,7 @@ const Registration: React.FC = () => {
                         <div className="mb-6">
                             <input
                                 type="email"
+                                {...register("email")}
                                 placeholder="Email"
                                 className=" border-gray-300 w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                             />
@@ -34,6 +50,7 @@ const Registration: React.FC = () => {
                         <div className="mb-6">
                             <input
                                 type="password"
+                                {...register("password")}
                                 placeholder="password"
                                 className=" border-gray-300 w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-primary focus-visible:shadow-none"
                             />
@@ -42,7 +59,9 @@ const Registration: React.FC = () => {
                             <label htmlFor='image' className='block mb-2 text-gray-800 text-sm'>
                                 Select Image:
                             </label>
-                            <input type='file' required />
+                            <input type='file'
+                                {...register("userImg")}
+                                required />
 
                         </div>
                         <div className="mb-10">
