@@ -79,7 +79,7 @@ const Registration: React.FC = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.upsertedCount > 0 || data.matchedCount > 0) {
+                if (data.acknowledged === true) {
                     console.log("registration successfully")
                 }
 

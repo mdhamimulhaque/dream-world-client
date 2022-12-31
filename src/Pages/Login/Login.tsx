@@ -17,12 +17,45 @@ const Login: React.FC = () => {
         signInWithPopup(auth, provider)
             .then(res => {
                 setUser(res?.user);
-
+                const fullName = res?.user?.displayName;
+                const email = res?.user?.email;
+                const userImg = res?.user?.photoURL;
+                saveUserInfoToDatabase(fullName, email, userImg)
             })
             .catch(err => console.log(err))
     }
 
-    console.log(user)
+
+    // ===> save user info to database
+    const saveUserInfoToDatabase = (fullName: string | null, email: string | null, userImg: string | null) => {
+        // ---> save userInfo to Database
+        const userInfo = {
+            fullName,
+            email,
+            userImg,
+            role: 'user',
+            verified: false,
+        }
+
+        fetch(`http://localhost:5000/users`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged === true) {
+                    console.log("Login successfully")
+                }
+
+            })
+            .catch(err => console.log(err))
+
+    }
+
+
     return (
         <section className="bg-green-100 py-20 lg:py-[120px]">
             <div className="container mx-auto">
