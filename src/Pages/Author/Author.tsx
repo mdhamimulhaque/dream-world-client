@@ -44,8 +44,11 @@ const Author: React.FC = () => {
             </div> */}
 
             <main className='grid grid-cols-12 px-4 mt-5'>
+
                 {
-                    authorPost.map(authPData => <AuthorPostCard authPData={authPData} />)
+                    authorPost.length > 0 ?
+                        authorPost.map(authPData => <AuthorPostCard authPData={authPData} />)
+                        : "You have no post"
                 }
 
             </main>

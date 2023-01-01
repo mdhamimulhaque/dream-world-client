@@ -1,5 +1,5 @@
 import React from 'react';
-import { HiOutlinePencilSquare, HiOutlineArchiveBoxXMark, HiOutlineCalendarDays, HiOutlineChatBubbleLeftRight, HiOutlineHeart } from "react-icons/hi2";
+import { HiPencilSquare, HiArchiveBoxXMark, HiOutlineCalendarDays, HiOutlineChatBubbleLeftRight, HiOutlineHeart } from "react-icons/hi2";
 import { PostData } from '../../Home/HomeBlog/HomeBlog';
 // import { AuthData } from '../Author';
 
@@ -16,12 +16,12 @@ const AuthorPostCard = ({ authPData }: Props) => {
                 <div className='flex justify-between items-center px-6 mt-6'>
                     <h2 className="text-sm font-semibold text-green-300">My {category}</h2>
                     <div className="icon_box flex items-center gap-2 text-lg cursor-pointer">
-                        <HiOutlinePencilSquare className='hover:text-blue-500' />
-                        <HiOutlineArchiveBoxXMark className='hover:text-red-500' />
+                        <HiPencilSquare className='text-blue-500 hover:text-blue-600' />
+                        <HiArchiveBoxXMark className='text-red-500 hover:text-red-600' />
                     </div>
                 </div>
                 <div className="py-1 px-6 cursor-pointer">
-                    <h1 className="mb-3 inline-block title-font text-xl font-semibold text-gray-800 tracking-wide duration-300 hover:text-green-500">{title}</h1>
+                    <h1 className="mb-3 inline-block title-font text-xl font-semibold text-gray-800 tracking-wide ">{title}</h1>
                     <p className="line-clamp-6 mb-3 overflow-hidden leading-relaxed text-gray-500">{description.slice(0, 200)}...</p>
                 </div>
                 <div className="pt-1 pb-4 px-6 flex justify-between items-center flex-wrap">
@@ -29,7 +29,7 @@ const AuthorPostCard = ({ authPData }: Props) => {
                     <div className="post_info flex gap-2 md:gap-3">
                         <div className='flex gap-1 items-center'>
                             <HiOutlineCalendarDays className='text-green-500' />
-                            <small className='text-xs'>22/12/22</small>
+                            <small className='text-xs'>{posted_date}</small>
                         </div>
                         <span className='text-green-500'>-</span>
                         <div className='flex gap-1 items-center'>
