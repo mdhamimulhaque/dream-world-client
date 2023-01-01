@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../img/logo.png';
-import uImg from '../../../img/mdhamimulhaque.jpg';
+import placeholderImg from '../../../img/placeholder_user.png';
 import Button from '../../Button/Button';
 import { HiBars3BottomRight } from 'react-icons/hi2';
 import { getAuth, signOut } from 'firebase/auth';
@@ -13,7 +13,7 @@ const auth = getAuth(app);
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const { user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext); console.log(user)
     // --->handleLogOut
     const handleLogOut = async () => {
 
@@ -45,7 +45,7 @@ const Header: React.FC = () => {
                 </nav>
                 {/* Avatar */}
                 <div className="hidden relative sm:inline-flex ml-auto md:ml-0 mr-4 md:mr-0 cursor-pointer border-2 rounded-full border-green-300">
-                    <img src={uImg} alt="img"
+                    <img src={user?.photoURL ? user?.photoURL : placeholderImg} alt="img"
                         className='rounded-full h-8 w-8'
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     />

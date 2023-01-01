@@ -8,7 +8,7 @@ import { PostData } from '../Home/HomeBlog/HomeBlog';
 
 const PostDetails: React.FC = () => {
     const data = useLoaderData() as PostData;
-    const { _id, title, category, posted_date, description, tags, postImg, user } = data;
+    const { _id, title, category, posted_date, description, tags, postImg, userImg, userName } = data;
     return (
         <>
             <div className="blog_card_area text-gray-800  p-5 md:p-10 rounded">
@@ -26,12 +26,12 @@ const PostDetails: React.FC = () => {
                         <h2 className='text-xl md:text-3xl font-semibold'>{title}</h2>
                         {/* user-published */}
                         <div className="post_owner_info flex flex-wrap  gap-2 mt-3">
-                            <img src={user?.userImg}
+                            <img src={userImg}
                                 alt="userImg"
                                 className='rounded-full w-8 h-8'
                             />
                             <div className='flex flex-wrap items-center'>
-                                <p className='text-sm'>{user?.name}</p>
+                                <p className='text-sm'>{userName}</p>
                                 <HiOutlineChevronRight className='text-green-500' />
                                 <p className='leading-2 text-sm'>{posted_date}</p>
                                 <HiOutlineChevronRight className='text-green-500' />

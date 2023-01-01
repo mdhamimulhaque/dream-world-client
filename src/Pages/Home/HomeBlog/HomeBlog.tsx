@@ -4,20 +4,18 @@ import { HiOutlineChevronDoubleRight } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 
 export interface PostData {
-    _id: number,
+    _id?: any,
     title: string;
     posted_date: string;
     description: string;
     tags?: (string)[] | null;
     postImg: string;
-    user: User;
+    userImg?: string;
+    userName?: string;
     category: string;
-    email: string
+    email?: string
 }
-export interface User {
-    name: string;
-    userImg: string;
-}
+
 
 
 

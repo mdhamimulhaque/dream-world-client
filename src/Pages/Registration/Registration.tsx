@@ -17,7 +17,8 @@ type Inputs = {
 const Registration: React.FC = () => {
     const { loading, setLoading, user, setUser } = useContext(AuthContext);
     const navigate = useNavigate()
-    const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+
     const registrationSubmit: SubmitHandler<Inputs> = data => {
         // ---> handle img upload file
         const image = data.userImg[0];
@@ -81,7 +82,7 @@ const Registration: React.FC = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged === true) {
-                    navigate('/')
+                    navigate('/');
                     console.log("registration successfully")
                 }
 

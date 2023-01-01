@@ -25,7 +25,8 @@ const Login: React.FC = () => {
         signInWithEmailAndPassword(auth, data.email, data.password)
             .then(res => {
                 if (res?.user?.email) {
-                    navigate('/')
+                    navigate('/');
+
                     console.log('login successfully')
                 }
             }).catch(err => console.log(err))

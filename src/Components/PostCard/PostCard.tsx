@@ -9,7 +9,7 @@ type Props = {
 }
 
 const PostCard = ({ pData }: Props) => {
-    const { _id, title, category, posted_date, description, tags, postImg, user } = pData;
+    const { _id, title, category, posted_date, description, tags, postImg, userImg, userName } = pData;
 
     return (
         <>
@@ -56,11 +56,11 @@ const PostCard = ({ pData }: Props) => {
 
                     </div>
                     <div className="post_owner_info flex gap-3 items-center">
-                        <img src={user.userImg}
+                        <img src={userImg}
                             alt="userImg"
                             className='rounded-full w-10 h-10'
                         />
-                        <h4 className='font-semibold'>{user.name}</h4>
+                        <h4 className='font-semibold'>{userName}</h4>
                     </div>
                 </div>
                 <Link to={`/post/${_id}`} className="button_box absolute bottom-[-20px] left-1/2 translate-x-[-50%]">
