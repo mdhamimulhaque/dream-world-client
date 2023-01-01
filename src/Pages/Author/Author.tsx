@@ -25,15 +25,15 @@ const Author: React.FC = () => {
                 </h2>
             </div>
 
-            <main className='grid grid-cols-12 px-4 mt-5'>
+            {
+                authorPost.length > 0 ?
+                    <main className='grid grid-cols-12 px-4 mt-5'>
+                        {
+                            authorPost.map(authPData => <AuthorPostCard key={authPData._id} authPData={authPData} />)
+                        }
+                    </main> : <h2 className='text-xl text-gray-800 px-4 my-5'>You have no post</h2>
+            }
 
-                {
-                    authorPost.length > 0 ?
-                        authorPost.map(authPData => <AuthorPostCard authPData={authPData} />)
-                        : "You have no post"
-                }
-
-            </main>
         </main>
     );
 };

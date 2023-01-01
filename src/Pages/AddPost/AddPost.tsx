@@ -4,6 +4,7 @@ import { AuthContext } from '../../Context/AuthProvider';
 import { useForm } from 'react-hook-form';
 import { SubmitHandler } from 'react-hook-form/dist/types';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 type Inputs = {
     title: string;
     description: string;
@@ -66,13 +67,15 @@ const AddPost = () => {
                         .then(data => {
                             if (data.acknowledged === true) {
                                 navigate('/');
-                                console.log("post created successfully")
+                                toast.success("New Post created successfully")
                             }
 
+                        }).catch(err => {
+                            toast.error(err.message)
                         })
 
                 }
-            }).catch(err => console.log(err))
+            }).catch(err => toast.error(err.message))
     }
 
     return (

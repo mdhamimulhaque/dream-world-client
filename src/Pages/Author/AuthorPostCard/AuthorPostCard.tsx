@@ -1,5 +1,7 @@
 import React from 'react';
 import { HiPencilSquare, HiArchiveBoxXMark, HiOutlineCalendarDays, HiOutlineChatBubbleLeftRight, HiOutlineHeart } from "react-icons/hi2";
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import { PostData } from '../../Home/HomeBlog/HomeBlog';
 
@@ -38,11 +40,12 @@ const AuthorPostCard = ({ authPData }: Props) => {
                             )
                         }
                     })
-                    .catch(err => console.log(err))
+                    .catch(err => toast.error(err.message))
             }
         })
 
     }
+
     return (
         <div className="mb-4 p-0 sm:p-4 col-span-12 md:col-span-6 lg:col-span-3 gap-2">
             <div className="group h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-sm hover:shadow-lg">
@@ -50,7 +53,10 @@ const AuthorPostCard = ({ authPData }: Props) => {
                 <div className='flex justify-between items-center px-6 mt-6'>
                     <h2 className="text-sm font-semibold text-green-300">My {category}</h2>
                     <div className="icon_box flex items-center gap-2 text-lg cursor-pointer">
-                        <HiPencilSquare className='text-blue-500 hover:text-blue-600' />
+                        <Link to={`/author/update-post/${_id}`}>
+                            <HiPencilSquare
+                                className='text-blue-500 hover:text-blue-600' />
+                        </Link>
                         <HiArchiveBoxXMark
                             onClick={() => handleDeletePost(_id)}
                             className='text-red-500 hover:text-red-600' />

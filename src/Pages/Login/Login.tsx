@@ -7,6 +7,7 @@ import { app } from '../../Firebase/FirebaseConfig';
 import { AuthContext } from '../../Context/AuthProvider';
 import { useForm } from 'react-hook-form';
 import { SubmitHandler } from 'react-hook-form/dist/types';
+import { toast } from 'react-toastify';
 
 type Inputs = {
     email: string;
@@ -28,9 +29,9 @@ const Login: React.FC = () => {
                 if (res?.user?.email) {
                     navigate('/');
 
-                    console.log('login successfully')
+                    toast.success('login successfully')
                 }
-            }).catch(err => console.log(err))
+            }).catch(err => toast.error(err.message))
     }
 
 
@@ -44,9 +45,9 @@ const Login: React.FC = () => {
                 const fullName = res?.user?.displayName;
                 const email = res?.user?.email;
                 const userImg = res?.user?.photoURL;
-                saveUserInfoToDatabase(fullName, email, userImg)
+                saveUserInfoToDatabase(fullName, email, userImg);
             })
-            .catch(err => console.log(err))
+            .catch(err => toast.error(err.message))
     }
 
 
@@ -71,11 +72,11 @@ const Login: React.FC = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged === true) {
-                    console.log("Login successfully")
+                    toast.success("Login successfully")
                 }
 
             })
-            .catch(err => console.log(err))
+            .catch(err => toast.error(err.message))
 
     }
 

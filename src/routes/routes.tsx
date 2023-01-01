@@ -6,6 +6,7 @@ import AboutUs from '../Pages/AboutUs/AboutUs';
 import AddPost from '../Pages/AddPost/AddPost';
 import AllPosts from '../Pages/AllPosts/AllPosts';
 import Author from '../Pages/Author/Author';
+import UpdatePost from '../Pages/Author/UpdatePost/UpdatePost';
 import Category from '../Pages/Category/Category';
 import Contact from '../Pages/Contact/Contact';
 import Home from '../Pages/Home/Home';
@@ -67,6 +68,11 @@ const routes = createBrowserRouter([
             {
                 path: '/author/add-post',
                 element: <AddPost />
+            },
+            {
+                path: '/author/update-post/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/post/${params.id}`),
+                element: <UpdatePost />
             }
         ]
     },

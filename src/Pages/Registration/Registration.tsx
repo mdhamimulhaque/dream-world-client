@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { SubmitHandler } from 'react-hook-form/dist/types';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { auth, AuthContext } from '../../Context/AuthProvider';
 import Logo from '../../img/logo.png';
 
@@ -47,9 +48,9 @@ const Registration: React.FC = () => {
                             }
 
                         })
-                        .catch(err => console.log(err))
+                        .catch(err => toast.error(err.message))
                 }
-            }).catch(err => console.log(err))
+            }).catch(err => toast.error(err.message))
     };
 
     // ===> save user info to database
@@ -83,11 +84,11 @@ const Registration: React.FC = () => {
             .then(data => {
                 if (data.acknowledged === true) {
                     navigate('/');
-                    console.log("registration successfully")
+                    toast.success("registration successfully")
                 }
 
             })
-            .catch(err => console.log(err))
+            .catch(err => toast.error(err.message))
 
     }
 
