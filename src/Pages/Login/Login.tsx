@@ -22,6 +22,7 @@ const Login: React.FC = () => {
     const navigate = useNavigate();
     // --->handle formlogin
     const loginSubmit: SubmitHandler<Inputs> = data => {
+        // --->login with email-pass
         signInWithEmailAndPassword(auth, data.email, data.password)
             .then(res => {
                 if (res?.user?.email) {

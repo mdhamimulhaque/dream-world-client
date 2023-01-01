@@ -3,6 +3,7 @@ import { HiOutlineChatBubbleLeftRight, HiOutlineHeart, HiOutlineCalendarDays } f
 import { Link } from 'react-router-dom';
 import { PostData } from '../../Pages/Home/HomeBlog/HomeBlog';
 import Tag from '../Tag/Tag';
+import placeholderImg from '../../img/placeholder_user.png';
 
 type Props = {
     pData: PostData;
@@ -56,11 +57,11 @@ const PostCard = ({ pData }: Props) => {
 
                     </div>
                     <div className="post_owner_info flex gap-3 items-center">
-                        <img src={userImg}
+                        <img src={userImg ? userImg : placeholderImg}
                             alt="userImg"
                             className='rounded-full w-10 h-10'
                         />
-                        <h4 className='font-semibold'>{userName}</h4>
+                        <h4 className='font-semibold'>{userName ? userName : "No Name set"}</h4>
                     </div>
                 </div>
                 <Link to={`/post/${_id}`} className="button_box absolute bottom-[-20px] left-1/2 translate-x-[-50%]">

@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Main from '../Layout/Main';
 import Secondary from '../Layout/Secondary';
 import AboutUs from '../Pages/AboutUs/AboutUs';
+import AddPost from '../Pages/AddPost/AddPost';
 import AllPosts from '../Pages/AllPosts/AllPosts';
 import Author from '../Pages/Author/Author';
 import Category from '../Pages/Category/Category';
@@ -62,6 +63,10 @@ const routes = createBrowserRouter([
             {
                 path: '/author/registration',
                 element: <Registration />
+            },
+            {
+                path: '/author/add-post',
+                element: <AddPost />
             }
         ]
     },

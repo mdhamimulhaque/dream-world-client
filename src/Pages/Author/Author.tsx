@@ -13,7 +13,7 @@ const Author: React.FC = () => {
         fetch(`http://localhost:5000/author?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setAuthorPost(data))
-    }, [user?.email])
+    }, [user?.email, authorPost])
 
     return (
         <main>

@@ -13,7 +13,7 @@ const auth = getAuth(app);
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const { user } = useContext(AuthContext); console.log(user)
+    const { user } = useContext(AuthContext);
     // --->handleLogOut
     const handleLogOut = async () => {
 
@@ -38,7 +38,11 @@ const Header: React.FC = () => {
                     <Link to="/" className="mr-8 hover:text-green-400">Home</Link>
                     <Link to="/all-posts" className="mr-8 hover:text-green-400">All Posts</Link>
                     {
-                        user?.uid && <Link to="/author" className="mr-8 hover:text-green-400">Author</Link>
+                        user?.uid &&
+                        <>
+                            <Link to="/author" className="mr-8 hover:text-green-400">Author</Link>
+                            <Link to="/author/add-post" className="mr-8 hover:text-green-400">Add Post</Link>
+                        </>
                     }
                     <Link to="/about-us" className="mr-8 hover:text-green-400">About Us</Link>
                     <Link to="/contact" className="mr-8 hover:text-green-400">Contact</Link>
@@ -90,9 +94,13 @@ const Header: React.FC = () => {
             {isOpen &&
                 <div className="w-full flex flex-col py-4 px-3 md:hidden bg-gray-900 text-base uppercase text-center font-semibold">
                     <Link to="/" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Home</Link>
-                    <Link to="/all-posts" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">All Posts</Link>
+                    <Link to="/author/add-post" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">All Posts</Link>
                     {
-                        user?.uid && <Link to="/author" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Author</Link>
+                        user?.uid &&
+                        <>
+                            <Link to="/author" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Author</Link>
+                            <Link to="/add-post" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Add Post</Link>
+                        </>
                     }
                     <Link to="/about-us" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">About</Link>
                     <Link to="/contact" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Contact</Link>
