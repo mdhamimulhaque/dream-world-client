@@ -1,14 +1,42 @@
 import React from 'react';
 import { HiPencilSquare, HiArchiveBoxXMark, HiOutlineCalendarDays, HiOutlineChatBubbleLeftRight, HiOutlineHeart } from "react-icons/hi2";
+import Swal from 'sweetalert2';
 import { PostData } from '../../Home/HomeBlog/HomeBlog';
-// import { AuthData } from '../Author';
+
 
 type Props = {
     authPData: PostData
 }
 
 const AuthorPostCard = ({ authPData }: Props) => {
-    const { _id, title, category, posted_date, description, tags, postImg, userImg, userName } = authPData;
+    const { _id, title, category, posted_date, description, postImg, } = authPData;
+    // ---> handle delete user post
+    const handleDeletePost = (id: React.MouseEventHandler<SVGElement>) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })
+
+        //     fetch(`http://localhost:5000/author/${id}`, {
+        //     method: 'DELETE',
+        // })
+        //     .then(res => res.json())
+        //     .then(data => console.log(data))
+
+    }
     return (
         <div className="mb-4 p-0 sm:p-4 col-span-12 md:col-span-6 lg:col-span-3 gap-2">
             <div className="group h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-sm hover:shadow-lg">
@@ -17,7 +45,9 @@ const AuthorPostCard = ({ authPData }: Props) => {
                     <h2 className="text-sm font-semibold text-green-300">My {category}</h2>
                     <div className="icon_box flex items-center gap-2 text-lg cursor-pointer">
                         <HiPencilSquare className='text-blue-500 hover:text-blue-600' />
-                        <HiArchiveBoxXMark className='text-red-500 hover:text-red-600' />
+                        <HiArchiveBoxXMark
+                            onClick={() => handleDeletePost(_id)}
+                            className='text-red-500 hover:text-red-600' />
                     </div>
                 </div>
                 <div className="py-1 px-6 cursor-pointer">

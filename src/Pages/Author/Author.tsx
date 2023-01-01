@@ -1,22 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import PostCard from '../../Components/PostCard/PostCard';
 import { AuthContext } from '../../Context/AuthProvider';
 import { PostData } from '../Home/HomeBlog/HomeBlog';
 import AuthorPostCard from './AuthorPostCard/AuthorPostCard';
 import userPlaceholderImg from '../../img/placeholder_user.png';
 
-// export interface AuthData {
-//     _id?: any,
-//     title: string;
-//     posted_date: string;
-//     description: string;
-//     tags?: (string)[] | null;
-//     postImg: string;
-//     userImg?: string;
-//     userName?: string;
-//     category: string;
-//     email?: string
-// }
 
 const Author: React.FC = () => {
     const { user, loading } = useContext(AuthContext);
@@ -27,7 +14,7 @@ const Author: React.FC = () => {
             .then(res => res.json())
             .then(data => setAuthorPost(data))
     }, [user?.email])
-    console.log(authorPost)
+
     return (
         <main>
             <div className="author_info p-5 bg-green-50">
@@ -37,11 +24,6 @@ const Author: React.FC = () => {
                     {authorPost[0]?.userName ? authorPost[0]?.userName : "No name set"}
                 </h2>
             </div>
-            {/* <div className='container mx-auto px-4 lg:w-1/2 flex flex-wrap flex-col gap-10 my-10'>
-                {
-                    authorPost.map(pData => <PostCard pData={pData} />)
-                }
-            </div> */}
 
             <main className='grid grid-cols-12 px-4 mt-5'>
 
