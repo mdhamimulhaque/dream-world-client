@@ -17,7 +17,7 @@ type Inputs = {
 export type CommentType = {
     _id: any;
     comment: string;
-    email: string;
+    email?: string;
     userName: string;
     userImg: string;
     posted_date: string

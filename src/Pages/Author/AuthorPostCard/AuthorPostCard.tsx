@@ -19,12 +19,11 @@ const AuthorPostCard = ({ authPData }: Props) => {
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#4F46E5',
+            confirmButtonColor: '#22C55E',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-
                 // --->method
                 fetch(`http://localhost:5000/author/${id}`, {
                     method: 'DELETE',
@@ -35,7 +34,7 @@ const AuthorPostCard = ({ authPData }: Props) => {
                             // ---> toast delete msg
                             Swal.fire(
                                 'Deleted!',
-                                'Your Product has been deleted.',
+                                'Your Post has been deleted.',
                                 'success'
                             )
                         }

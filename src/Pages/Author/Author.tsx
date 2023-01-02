@@ -15,13 +15,14 @@ const Author: React.FC = () => {
             .then(data => setAuthorPost(data))
     }, [user?.email, authorPost])
 
+    console.log(user)
     return (
         <main>
             <div className="author_info p-5 bg-green-50">
-                <img alt="img" src={authorPost[0]?.userImg ? authorPost[0]?.userImg : userPlaceholderImg}
+                <img alt="img" src={user?.photoURL ? user?.photoURL : userPlaceholderImg}
                     className="mx-auto object-cover rounded-full h-20 w-20 " />
                 <h2 className='text-2xl text-semibold text-center mt-2'>
-                    {authorPost[0]?.userName ? authorPost[0]?.userName : "No name set"}
+                    {user?.displayName ? user?.displayName : "No name set"}
                 </h2>
             </div>
 
