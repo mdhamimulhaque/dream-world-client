@@ -25,7 +25,7 @@ export type CommentType = {
 
 const PostDetails: React.FC = () => {
     const data = useLoaderData() as PostData;
-    const { user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext);
     const { _id, title, category, posted_date, description, tags, postImg, userImg, userName } = data;
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
     const [comments, setComments] = useState<CommentType[]>([])
@@ -59,7 +59,7 @@ const PostDetails: React.FC = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged === true) {
-                    toast.success('new comment added')
+                    toast.success('new comment added');
                 }
             })
     }
@@ -71,7 +71,7 @@ const PostDetails: React.FC = () => {
             .then(data => setComments(data))
     }, [comments, category])
 
-
+    // console.log(user)
     return (
         <>
             <div className="blog_card_area text-gray-800  p-5 md:p-10 rounded">

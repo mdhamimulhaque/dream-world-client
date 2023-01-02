@@ -13,6 +13,7 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import PostDetails from '../Pages/PostDetails/PostDetails';
 import Registration from '../Pages/Registration/Registration';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const routes = createBrowserRouter([
     {
@@ -55,7 +56,9 @@ const routes = createBrowserRouter([
         children: [
             {
                 path: '/author',
-                element: <Author />
+                element: <PrivateRoute>
+                    <Author />
+                </PrivateRoute>
             },
             {
                 path: '/author/login',
@@ -67,12 +70,16 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/author/add-post',
-                element: <AddPost />
+                element: <PrivateRoute>
+                    <AddPost />
+                </PrivateRoute>
             },
             {
                 path: '/author/update-post/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/post/${params.id}`),
-                element: <UpdatePost />
+                element: <PrivateRoute>
+                    <UpdatePost />
+                </PrivateRoute>
             }
         ]
     },

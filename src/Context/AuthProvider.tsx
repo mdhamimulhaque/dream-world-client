@@ -7,9 +7,9 @@ type ContextProps = {
 }
 
 export interface ContextValueInterface {
-    loading: boolean;
+    loading?: boolean;
     setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-    user: any | null;
+    user?: any | null;
     setUser: React.Dispatch<React.SetStateAction<any | null>>;
 
 }

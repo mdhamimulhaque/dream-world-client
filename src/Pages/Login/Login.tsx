@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../../img/logo.png';
 import { FaGofore, FaGithub } from "react-icons/fa";
 import { getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
@@ -21,13 +21,17 @@ const Login: React.FC = () => {
     const { loading, setLoading, user, setUser } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
+
     // --->handle formlogin
     const loginSubmit: SubmitHandler<Inputs> = data => {
         // --->login with email-pass
         signInWithEmailAndPassword(auth, data.email, data.password)
             .then(res => {
                 if (res?.user?.email) {
-                    navigate('/');
+                    navigate(from, { replace: true })
                     toast.success('login successfully')
                 }
             }).catch(err => toast.error(err.message))
@@ -71,7 +75,7 @@ const Login: React.FC = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged === true) {
-                    navigate('/');
+                    navigate(from, { replace: true })
                     toast.success("Login successfully")
                 }
 
