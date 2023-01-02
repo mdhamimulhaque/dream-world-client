@@ -28,7 +28,6 @@ const Login: React.FC = () => {
             .then(res => {
                 if (res?.user?.email) {
                     navigate('/');
-
                     toast.success('login successfully')
                 }
             }).catch(err => toast.error(err.message))
@@ -72,6 +71,7 @@ const Login: React.FC = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged === true) {
+                    navigate('/');
                     toast.success("Login successfully")
                 }
 

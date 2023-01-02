@@ -7,6 +7,7 @@ import { HiBars3BottomRight } from 'react-icons/hi2';
 import { getAuth, signOut } from 'firebase/auth';
 import { app } from '../../../Firebase/FirebaseConfig';
 import { AuthContext } from '../../../Context/AuthProvider';
+import { toast } from 'react-toastify';
 
 const auth = getAuth(app);
 
@@ -19,9 +20,9 @@ const Header: React.FC = () => {
 
         signOut(auth)
             .then(() => {
-                console.log('logout successfully')
+                toast.success('logout successfully')
             }).catch((error) => {
-                console.log(error)
+                toast.error(error.message)
             });
     }
     return (
