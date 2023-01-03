@@ -14,6 +14,7 @@ import AllComments from '../Pages/Dashboard/AllComments/AllComments';
 import AllUsers from '../Pages/Dashboard/AllUsers/AllUsers';
 import DashboardAllPost from '../Pages/Dashboard/DashboardAllPost/DashboardAllPost';
 import DashboardHome from '../Pages/Dashboard/DashboardHome/DashboardHome';
+import Error from '../Pages/Error/Error';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import PostDetails from '../Pages/PostDetails/PostDetails';
@@ -24,6 +25,7 @@ const routes = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
+        errorElement: <Error />,
         children: [
             {
                 path: '/',
@@ -107,6 +109,10 @@ const routes = createBrowserRouter([
             {
                 path: '/dashboard/all-comments',
                 element: <AllComments />
+            },
+            {
+                path: '/dashboard/add-newPost',
+                element: <AddPost />
             }
         ]
     }

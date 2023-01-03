@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { BsArrowLeftCircle } from 'react-icons/bs';
-import { AiFillRedditCircle } from 'react-icons/ai';
-import { HiSquares2X2, HiUserGroup, HiBookOpen, HiChatBubbleLeftRight } from 'react-icons/hi2';
-import { RxDashboard } from 'react-icons/rx';
+import { HiSquares2X2, HiUserGroup, HiBookOpen, HiChatBubbleLeftRight, HiFolderPlus } from 'react-icons/hi2';
 import { useState } from 'react';
 import LOGO from '../img/logo.png'
 
@@ -44,6 +42,11 @@ const DashboardLayout: React.FC = () => {
                         <Link to='/dashboard/all-comments' className={`p-2 mb-2 rounded hover:bg-green-400 inline-block hover:text-gray-800 ${isSidebarOpen && 'flex gap-3 items-center p-1'}`}>
                             <div className='flex items-center gap-1'>
                                 <HiChatBubbleLeftRight className='text-xl' /> {isSidebarOpen && <span>ALL Comments</span>}
+                            </div>
+                        </Link>
+                        <Link to='add-newPost' className={`p-2 mb-2 rounded hover:bg-green-400 inline-block hover:text-gray-800 ${isSidebarOpen && 'flex gap-3 items-center p-1'}`}>
+                            <div className='flex items-center gap-1'>
+                                <HiFolderPlus className='text-xl' /> {isSidebarOpen && <span>Add New Post</span>}
                             </div>
                         </Link>
 

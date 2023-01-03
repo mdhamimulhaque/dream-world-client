@@ -46,7 +46,7 @@ const AuthorPostCard = ({ authPData }: Props) => {
     }
 
     return (
-        <div className="mb-4 p-0 sm:p-4 col-span-12 md:col-span-6 lg:col-span-3 gap-2">
+        <div className="mb-4 p-0 sm:p-4 col-span-12 md:col-span-6 lg:col-span-3 gap-2 ">
             <div className="group h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-sm hover:shadow-lg">
                 <img className="lg:h-48 md:h-36 w-full object-cover object-center transition duration-500 ease-in-out transform group-hover:scale-105" src={postImg} alt="blog" />
 
@@ -70,7 +70,7 @@ const AuthorPostCard = ({ authPData }: Props) => {
                     </span>
                 }
                 <div className="py-1 px-6 cursor-pointer">
-                    <h1 className="mb-3 inline-block title-font text-xl font-semibold text-gray-800 tracking-wide ">{title}</h1>
+                    <Link to={`/post/${_id}`} className="mb-3 hover:text-green-500 duration-200 inline-block title-font text-xl font-semibold text-gray-800 tracking-wide ">{title}</Link>
                     <p className="line-clamp-6 mb-3 overflow-hidden leading-relaxed text-gray-500">{description.slice(0, 200)}...</p>
                 </div>
                 <div className="pt-1 pb-4 px-6 flex justify-between items-center flex-wrap">

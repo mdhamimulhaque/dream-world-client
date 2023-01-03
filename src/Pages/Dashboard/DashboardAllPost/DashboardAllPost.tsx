@@ -21,7 +21,7 @@ const DashboardAllPost: React.FC = () => {
 
 
             {/* category card */}
-            <div className='category_post grid grid-cols-12 gap-4'>
+            <div className='category_post grid grid-cols-12 gap-4 mb-4'>
                 {
                     allPosts?.map(post => <DashboardPostCard key={post._id} post={post} />)
                 }

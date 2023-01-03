@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { PostData } from '../../Pages/Home/HomeBlog/HomeBlog';
 
 type Props = {
@@ -14,7 +15,7 @@ const PopularPost = ({ PPost }: Props) => {
             />
             <div className="sidebar_text m-0 p-0">
                 <small className='text-xs  text-green-500'>{category}</small>
-                <h4 className='font-semibold text-xs'>{title.slice(0, 30)}..</h4>
+                <Link to={`/post/${_id}`} className='block duration-200 font-semibold cursor-pointer hover:text-green-500 text-xs'>{title.slice(0, 30)}..</Link>
                 <small>Published: {posted_date}</small>
             </div>
         </div>

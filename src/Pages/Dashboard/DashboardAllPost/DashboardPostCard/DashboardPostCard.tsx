@@ -47,7 +47,6 @@ const DashboardPostCard = ({ post }: Props) => {
 
     // ---> handle make popular post
     const handleMakePopularPost = (id: React.MouseEventHandler<SVGElement>) => {
-        console.log(id)
         fetch(`http://localhost:5000/posts?id=${id}`, {
             method: "PUT",
             headers: {
@@ -55,7 +54,15 @@ const DashboardPostCard = ({ post }: Props) => {
             }
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success('Popular post created')
+                }
+            })
+            .catch(err => {
+                console.log(err);
+                toast.error(err.message)
+            })
     }
 
 

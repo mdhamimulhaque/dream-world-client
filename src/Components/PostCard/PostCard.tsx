@@ -27,7 +27,7 @@ const PostCard = ({ pData }: Props) => {
                         <span className="inline-flex bg-green-100 text-gray-800 rounded-full h-6 px-3 justify-center items-center">
                             {category}
                         </span>
-                        <h2 className='text-xl md:text-3xl font-semibold'>{title}</h2>
+                        <Link to={`/post/${_id}`} className='block hover:text-green-500 duration-200 text-xl md:text-3xl font-semibold'>{title}</Link>
                         <div className="post_info flex gap-2 md:gap-3">
                             <div className='flex gap-1 items-center'>
                                 <HiOutlineCalendarDays className='text-green-500' />
