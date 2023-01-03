@@ -1,14 +1,21 @@
 import React from 'react';
+import { PostData } from '../../Pages/Home/HomeBlog/HomeBlog';
 
-const PopularPost: React.FC = () => {
+type Props = {
+    PPost: PostData;
+}
+
+const PopularPost = ({ PPost }: Props) => {
+    const { _id, title, category, posted_date, postImg } = PPost;
     return (
         <div className='flex gap-2 my-3'>
-            <img src="https://img.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_150455-16829.jpg?w=900" alt="img"
-                className='w-16 h-16 rounded'
+            <img src={postImg} alt="img"
+                className='w-16 h-16 rounded object-cover'
             />
-            <div className="sidebar_text">
-                <h4 className='font-semibold'>Lorem ipsum dolor sit amet.</h4>
-                <small>Published: 22/12/22</small>
+            <div className="sidebar_text m-0 p-0">
+                <small className='text-xs  text-green-500'>{category}</small>
+                <h4 className='font-semibold text-xs'>{title.slice(0, 30)}..</h4>
+                <small>Published: {posted_date}</small>
             </div>
         </div>
     );

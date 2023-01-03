@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { HiOutlineChatBubbleLeftRight, HiOutlineHeart } from "react-icons/hi2";
+import { HiOutlineChatBubbleLeftRight, HiOutlineHeart, HiSparkles } from "react-icons/hi2";
 import Tag from '../../Components/Tag/Tag';
 import { HiOutlineChevronRight } from "react-icons/hi2";
 import CommentBox from './CommentBox/CommentBox';
@@ -26,7 +26,7 @@ export type CommentType = {
 const PostDetails: React.FC = () => {
     const data = useLoaderData() as PostData;
     const { user } = useContext(AuthContext);
-    const { _id, title, category, posted_date, description, tags, postImg, userImg, userName } = data;
+    const { _id, title, category, posted_date, description, isPopular, tags, postImg, userImg, userName } = data;
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
     const [comments, setComments] = useState<CommentType[]>([])
     // ---> date formate
@@ -76,10 +76,17 @@ const PostDetails: React.FC = () => {
             <div className="blog_card_area text-gray-800  p-5 md:p-10 rounded">
                 {/* card header */}
                 <div className="card_header ">
-                    <div className="header_img  mb-3">
+                    <div className="header_img relative mb-3">
                         <img src={postImg} alt="img"
                             className='h-60 w-full lg:h-80 object-cover'
                         />
+                        {
+                            isPopular &&
+                            <span className='absolute flex items-center bg-green-500 px-2 text-white right-0 top-0'>
+                                Popular
+                                <HiSparkles className='ml-2 text-white' />
+                            </span>
+                        }
                     </div>
                     <div className="header_text leading-10">
                         <span className="inline-flex bg-green-100 text-gray-800 rounded-full h-6 px-3 justify-center items-center">

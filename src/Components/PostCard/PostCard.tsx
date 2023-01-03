@@ -1,5 +1,5 @@
 import React from 'react';
-import { HiOutlineChatBubbleLeftRight, HiOutlineHeart, HiOutlineCalendarDays } from "react-icons/hi2";
+import { HiOutlineChatBubbleLeftRight, HiOutlineHeart, HiOutlineCalendarDays, HiSparkles } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
 import { PostData } from '../../Pages/Home/HomeBlog/HomeBlog';
 import Tag from '../Tag/Tag';
@@ -10,7 +10,7 @@ type Props = {
 }
 
 const PostCard = ({ pData }: Props) => {
-    const { _id, title, category, posted_date, description, tags, postImg, userImg, userName } = pData;
+    const { _id, title, category, posted_date, description, isPopular, tags, postImg, userImg, userName } = pData;
 
     return (
         <>
@@ -21,8 +21,9 @@ const PostCard = ({ pData }: Props) => {
                         <img src={postImg} alt="img"
                             className='lg:w-52 lg:h-40 object-cover'
                         />
+
                     </div>
-                    <div className="header_text leading-10">
+                    <div className="header_text leading-10 relative">
                         <span className="inline-flex bg-green-100 text-gray-800 rounded-full h-6 px-3 justify-center items-center">
                             {category}
                         </span>
@@ -43,6 +44,13 @@ const PostCard = ({ pData }: Props) => {
                             </div>
                         </div>
                     </div>
+                    {
+                        isPopular &&
+                        <span className='absolute flex items-center bg-green-500 px-2 text-white right-0 top-0'>
+                            Popular
+                            <HiSparkles className='ml-2 text-white' />
+                        </span>
+                    }
                 </div>
                 {/* card body */}
                 <div className="card_body my-4">
