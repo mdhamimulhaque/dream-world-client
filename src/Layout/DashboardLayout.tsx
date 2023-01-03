@@ -25,25 +25,30 @@ const DashboardLayout: React.FC = () => {
                     </Link>
 
                     <div className="nav_items_area mt-4">
-                        <ul>
-                            <li className={` p-2 mb-2 rounded hover:bg-green-400 inline-block hover:text-gray-800 ${isSidebarOpen && 'flex gap-3 items-center p-1'}`}>
-                                <Link to='/dashboard/home' className='flex items-center gap-1'>
-                                    <RxDashboard /> {isSidebarOpen && <span>Dashboard</span>}
-                                </Link>
-                            </li>
-                            <li className={` p-2 mb-2 rounded hover:bg-green-400 inline-block hover:text-gray-800 ${isSidebarOpen && 'flex gap-3 items-center p-1'}`}>
-                                <Link to='/dashboard/all-users' className='flex items-center gap-1'>
-                                    <HiOutlineUserGroup /> {isSidebarOpen && <span>ALL Users</span>}
-                                </Link>
-                            </li>
-                        </ul>
+
+                        <Link to='/dashboard/home' className={` p-2 mb-2 rounded hover:bg-green-400 inline-block hover:text-gray-800 ${isSidebarOpen && 'flex gap-3 items-center p-1'}`}>
+                            <div className='flex items-center gap-1'>
+                                <RxDashboard className='text-xl' /> {isSidebarOpen && <span>Dashboard</span>}
+                            </div>
+                        </Link>
+                        <Link to='/dashboard/all-users' className={` p-2 mb-2 rounded hover:bg-green-400 inline-block hover:text-gray-800 ${isSidebarOpen && 'flex gap-3 items-center p-1'}`}>
+                            <div className='flex items-center gap-1'>
+                                <HiOutlineUserGroup className='text-xl' /> {isSidebarOpen && <span>ALL Users</span>}
+                            </div>
+                        </Link>
+                        <Link to='/dashboard/all-posts' className={`p-2 mb-2 rounded hover:bg-green-400 inline-block hover:text-gray-800 ${isSidebarOpen && 'flex gap-3 items-center p-1'}`}>
+                            <div className='flex items-center gap-1'>
+                                <HiOutlineUserGroup className='text-xl' /> {isSidebarOpen && <span>ALL Posts</span>}
+                            </div>
+                        </Link>
+
                     </div>
                 </div>
             </aside>
 
 
 
-            <main className={`body_wrapper px-5 bg-green-500 
+            <main className={`body_wrapper px-5 
         ${isSidebarOpen ? 'w-[calc(100%-288px)]' : 'w-[calc(100%-80px)]'}`}>
                 <Outlet />
             </main>

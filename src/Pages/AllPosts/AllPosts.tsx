@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import PostCard from '../../Components/PostCard/PostCard';
 import { PostData } from '../Home/HomeBlog/HomeBlog';
 
-const AllPosts = () => {
+const AllPosts: React.FC = () => {
     const postData = useLoaderData() as PostData[];
     return (
         <>

@@ -11,6 +11,7 @@ import UpdatePost from '../Pages/Author/UpdatePost/UpdatePost';
 import Category from '../Pages/Category/Category';
 import Contact from '../Pages/Contact/Contact';
 import AllUsers from '../Pages/Dashboard/AllUsers/AllUsers';
+import DashboardAllPost from '../Pages/Dashboard/DashboardAllPost/DashboardAllPost';
 import DashboardHome from '../Pages/Dashboard/DashboardHome/DashboardHome';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
@@ -97,6 +98,10 @@ const routes = createBrowserRouter([
             {
                 path: '/dashboard/all-users',
                 element: <AllUsers />
+            },
+            {
+                path: '/dashboard/all-posts',
+                element: <DashboardAllPost />
             }
         ]
     }
