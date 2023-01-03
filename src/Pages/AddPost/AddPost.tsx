@@ -51,7 +51,8 @@ const AddPost = () => {
                         postImg: imgData.data.url,
                         userImg: user?.photoURL,
                         userName: user?.displayName,
-                        email: user?.email
+                        email: user?.email,
+                        isPopular: false
                     }
 
                     //    ===> store post to database

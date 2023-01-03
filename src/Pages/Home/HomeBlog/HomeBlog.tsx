@@ -14,7 +14,8 @@ export interface PostData {
     userImg?: string;
     userName?: string;
     category: string;
-    email?: string
+    email?: string;
+    isPopular?: boolean
 }
 
 

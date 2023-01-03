@@ -24,7 +24,7 @@ const AllComments: React.FC = () => {
 
             <section className='comments_wrapper grid grid-cols-12 gap-2'>
                 {
-                    comments?.map(commentData => <CommentsCard commentData={commentData} />)
+                    comments?.map(commentData => <CommentsCard key={commentData?._id} commentData={commentData} />)
                 }
             </section>
         </>

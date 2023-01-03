@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PostData } from '../../../Home/HomeBlog/HomeBlog';
-import { HiPencilSquare, HiArchiveBoxXMark } from "react-icons/hi2";
+import { HiArchiveBoxXMark, HiSparkles } from "react-icons/hi2";
 import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
+
 
 type Props = {
     post: PostData
 }
 
 const DashboardPostCard = ({ post }: Props) => {
-    const { _id, title, category, posted_date, description, postImg, } = post;
+    const { _id, title, category, posted_date, postImg, isPopular } = post;
     // ---> handle delete post
     const handleDeletePost = (id: React.MouseEventHandler<SVGElement>) => {
         Swal.fire({
@@ -44,14 +45,31 @@ const DashboardPostCard = ({ post }: Props) => {
 
     }
 
-
+    // ---> handle make popular post
+    const handleMakePopularPost = (id: React.MouseEventHandler<SVGElement>) => {
+        console.log(id)
+        fetch(`http://localhost:5000/posts?id=${id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+    }
 
 
     return (
-        <div className='col-span-12 md:col-span-6 lg:col-span-3 gap-2'>
-            <article className="flex flex-col ">
-                <Link to='#' rel="noopener noreferrer">
+        <div className='col-span-12 md:col-span-6 lg:col-span-3 shadow-lg '>
+            <article className="flex flex-col">
+                <Link to='#' className='relative'>
                     <img className="object-cover w-full h-52 " src={postImg} alt="img" />
+                    {
+                        isPopular && <span className='absolute flex items-center bg-red-400 px-2 text-white right-0 top-0'>
+                            Popular
+                            <HiSparkles className='ml-2 text-green-500' />
+                        </span>
+                    }
                 </Link>
                 <div className="flex flex-col flex-1 p-6">
                     <div className="icon_box flex items-center justify-between gap-2 text-lg cursor-pointer">
@@ -65,8 +83,18 @@ const DashboardPostCard = ({ post }: Props) => {
                     <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs">
                         <span>Posted: {posted_date}</span>
                     </div>
-                    <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">{title}</h3>
+                    <h3 className="flex-1 py-2 text-lg font-semibold leading-snug">{title && title.slice(0, 50)}...</h3>
                 </div>
+
+
+                {
+                    !isPopular &&
+                    <button className='inline-block rounded border border-green-500 bg-green-500 px-12 py-3 text-sm font-medium text-white hover:bg-green-400 focus:outline-none focus:ring active:text-green-500'
+                        onClick={() => handleMakePopularPost(_id)}>
+                        Make Popular Post
+                    </button>
+                }
+
             </article>
         </div>
     );
