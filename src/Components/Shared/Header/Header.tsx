@@ -45,6 +45,7 @@ const Header: React.FC = () => {
                             <Link to="/author/add-post" className="mr-8 hover:text-green-400">Add Post</Link>
                         </>
                     }
+                    <Link to="/dashboard/home" className="mr-8 hover:text-green-400">Dashboard</Link>
                     <Link to="/about-us" className="mr-8 hover:text-green-400">About Us</Link>
                     <Link to="/contact" className="mr-8 hover:text-green-400">Contact</Link>
 
@@ -53,7 +54,7 @@ const Header: React.FC = () => {
                 {/* Avatar */}
                 <div className="hidden relative sm:inline-flex ml-auto md:ml-0 mr-4 md:mr-0 cursor-pointer border-2 rounded-full border-green-300">
                     <img src={user?.photoURL ? user?.photoURL : placeholderImg} alt="img"
-                        className='rounded-full h-8 w-8'
+                        className='rounded-full h-8 w-8 object-cover'
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     />
                     {
@@ -103,6 +104,7 @@ const Header: React.FC = () => {
                             <Link to="/add-post" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Add Post</Link>
                         </>
                     }
+                    <Link to="/dashboard/home" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Dashboard</Link>
                     <Link to="/about-us" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">About</Link>
                     <Link to="/contact" className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-green-400">Contact</Link>
 

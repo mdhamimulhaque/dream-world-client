@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import DashboardLayout from '../Layout/DashboardLayout';
 import Main from '../Layout/Main';
 import Secondary from '../Layout/Secondary';
 import AboutUs from '../Pages/AboutUs/AboutUs';
@@ -9,6 +10,8 @@ import Author from '../Pages/Author/Author';
 import UpdatePost from '../Pages/Author/UpdatePost/UpdatePost';
 import Category from '../Pages/Category/Category';
 import Contact from '../Pages/Contact/Contact';
+import AllUsers from '../Pages/Dashboard/AllUsers/AllUsers';
+import DashboardHome from '../Pages/Dashboard/DashboardHome/DashboardHome';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import PostDetails from '../Pages/PostDetails/PostDetails';
@@ -83,6 +86,21 @@ const routes = createBrowserRouter([
             }
         ]
     },
+    {
+        path: '/dashboard',
+        element: <DashboardLayout />,
+        children: [
+            {
+                path: '/dashboard/home',
+                element: <DashboardHome />
+            },
+            {
+                path: '/dashboard/all-users',
+                element: <AllUsers />
+            }
+        ]
+    }
+
 ])
 
 export default routes;
