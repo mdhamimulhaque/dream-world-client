@@ -23,7 +23,7 @@ const CommentBox = ({ commentData }: Props) => {
         }
     }, [user?.email])
 
-    // ---> handle delete user post
+    // ---> handle delete user comments
     const handleDeleteComment = (id: React.MouseEventHandler<SVGElement>) => {
         Swal.fire({
             title: 'Are you sure?',

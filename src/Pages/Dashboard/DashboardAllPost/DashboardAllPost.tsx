@@ -14,7 +14,7 @@ const DashboardAllPost: React.FC = () => {
     return (
         <>
             {/* page title */}
-            <div className='font-semibold px-4 mt-5'>
+            <div className='font-semibold my-5'>
                 <h2 className='text-center text-green-500 text-4xl'>All Posts</h2>
                 <h2 className="text-xl text-gray-800 ">Total : {allPosts?.length}</h2>
             </div>

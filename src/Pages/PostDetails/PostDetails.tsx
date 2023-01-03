@@ -71,7 +71,6 @@ const PostDetails: React.FC = () => {
             .then(data => setComments(data))
     }, [comments, category])
 
-    // console.log(user)
     return (
         <>
             <div className="blog_card_area text-gray-800  p-5 md:p-10 rounded">

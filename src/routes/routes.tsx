@@ -10,6 +10,7 @@ import Author from '../Pages/Author/Author';
 import UpdatePost from '../Pages/Author/UpdatePost/UpdatePost';
 import Category from '../Pages/Category/Category';
 import Contact from '../Pages/Contact/Contact';
+import AllComments from '../Pages/Dashboard/AllComments/AllComments';
 import AllUsers from '../Pages/Dashboard/AllUsers/AllUsers';
 import DashboardAllPost from '../Pages/Dashboard/DashboardAllPost/DashboardAllPost';
 import DashboardHome from '../Pages/Dashboard/DashboardHome/DashboardHome';
@@ -102,6 +103,10 @@ const routes = createBrowserRouter([
             {
                 path: '/dashboard/all-posts',
                 element: <DashboardAllPost />
+            },
+            {
+                path: '/dashboard/all-comments',
+                element: <AllComments />
             }
         ]
     }
