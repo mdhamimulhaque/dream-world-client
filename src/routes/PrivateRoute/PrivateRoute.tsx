@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import Loading from '../../Components/Loading/Loading';
 import { AuthContext } from '../../Context/AuthProvider';
 
 type RouteProps = {

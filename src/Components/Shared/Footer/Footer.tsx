@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { BsFacebook, BsGithub, BsLinkedin, BsInstagram, BsTwitter, BsFillEnvelopeFill, BsFillTelephoneFill } from 'react-icons/bs';
+import { AuthContext } from '../../../Context/AuthProvider';
 
 const Footer: React.FC = () => {
+    const { user } = useContext(AuthContext);
+
     return (
         <>
             <h2 className="sr-only">Footer</h2>
@@ -35,12 +38,19 @@ const Footer: React.FC = () => {
 
                     {/* navigation */}
                     <nav className="py-4 px-2 flex flex-wrap justify-center list-none">
-                        <li className="p-3 hover:font-semibold"><Link to="#link">Solutions</Link></li>
-                        <li className="p-3 hover:font-semibold"><Link to="#link">Pricing</Link></li>
-                        <li className="p-3 hover:font-semibold"><Link to="#link">About</Link></li>
-                        <li className="p-3 hover:font-semibold"><Link to="#link">Contact</Link></li>
-                        <li className="p-3 hover:font-semibold"><Link to="#link">Press</Link></li>
-                        <li className="p-3 hover:font-semibold"><Link to="#link">Partners</Link></li>
+                        <li className="p-3 hover:font-semibold cursor-pointer hover:text-green-500 duration-200"><Link to="/">Home</Link></li>
+                        <li className="p-3 hover:font-semibold cursor-pointer hover:text-green-500 duration-200"><Link to="/all-posts">All Posts</Link></li>
+                        {
+                            user?.email &&
+                            <>
+                                <li className="p-3 hover:font-semibold cursor-pointer hover:text-green-500 duration-200"><Link to="/author">Author</Link></li>
+                                <li className="p-3 hover:font-semibold cursor-pointer hover:text-green-500 duration-200"><Link to="/author/add-post">Add Post</Link></li>
+                            </>
+                        }
+
+                        <li className="p-3 hover:font-semibold cursor-pointer hover:text-green-500 duration-200"><Link to="/dashboard/home">Dashboard</Link></li>
+                        <li className="p-3 hover:font-semibold cursor-pointer hover:text-green-500 duration-200"><Link to="/about-us">About Us</Link></li>
+                        <li className="p-3 hover:font-semibold cursor-pointer hover:text-green-500 duration-200"><Link to="/contact">Contact</Link></li>
                     </nav>
 
                     {/* contact */}

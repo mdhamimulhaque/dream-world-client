@@ -11,14 +11,16 @@ export interface ContextValueInterface {
     setLoading: React.Dispatch<React.SetStateAction<boolean>>;
     user?: any | null;
     setUser: React.Dispatch<React.SetStateAction<any | null>>;
-
+    isAdmin: boolean | undefined
 }
 
 export const AuthContext = createContext<ContextValueInterface>({} as ContextValueInterface)
 export const auth = getAuth(app)
 const AuthProvider = ({ children }: ContextProps) => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [user, setUser] = useState<any | null>(null);
+    const [isAdmin, setIsAdmin] = useState();
+    const [isAdminLoading, setIsAdminLoading] = useState(true)
 
 
     // ---> track current user || isLogin
@@ -30,12 +32,23 @@ const AuthProvider = ({ children }: ContextProps) => {
         return () => unSubscribe()
     }, [])
 
+    // ---> admin check
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/admin/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setIsAdmin(data?.isAdmin);
+                setIsAdminLoading(false)
+            })
+    }, [user?.email])
+
 
     const authInfo: ContextValueInterface = {
         loading,
         setLoading,
         user,
         setUser,
+        isAdmin
     }
     return (
         <AuthContext.Provider value={authInfo}>

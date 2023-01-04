@@ -25,7 +25,7 @@ const MainSidebar: React.FC = () => {
             <section className="popular_post_area bg-white p-2 mr-2 rounded">
                 <h2 className='text-lg text-gray-800'>Popular Post</h2>
                 {
-                    popularPosts?.slice(0, 5).map(PPost => <PopularPost PPost={PPost} />)
+                    popularPosts?.slice(0, 5).map(PPost => <PopularPost key={PPost._id} PPost={PPost} />)
                 }
 
 

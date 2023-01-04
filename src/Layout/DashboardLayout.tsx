@@ -1,12 +1,27 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { BsArrowLeftCircle } from 'react-icons/bs';
-import { HiSquares2X2, HiUserGroup, HiBookOpen, HiChatBubbleLeftRight, HiFolderPlus } from 'react-icons/hi2';
-import { useState } from 'react';
+import { HiSquares2X2, HiUserGroup, HiArrowLeftOnRectangle, HiBookOpen, HiChatBubbleLeftRight, HiFolderPlus } from 'react-icons/hi2';
+import { useState, useContext } from 'react';
 import LOGO from '../img/logo.png'
+import { signOut } from 'firebase/auth';
+import { auth } from '../Context/AuthProvider';
+import { toast } from 'react-toastify';
+
 
 const DashboardLayout: React.FC = () => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true)
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+
+    const handleLogOut = async () => {
+
+        signOut(auth)
+            .then(() => {
+                toast.success('logout successfully')
+            }).catch((error) => {
+                toast.error(error.message)
+            });
+    }
 
     return (
         <div className='flex'>
@@ -22,7 +37,7 @@ const DashboardLayout: React.FC = () => {
                         {isSidebarOpen && <span className='text-xl'>KnowledgeTunes</span>}
                     </Link>
 
-                    <div className="nav_items_area mt-4">
+                    <div className="nav_items_area mt-4 ">
 
                         <Link to='/dashboard/home' className={` p-2 mb-2 rounded hover:bg-green-400 inline-block hover:text-gray-800 ${isSidebarOpen && 'flex gap-3 items-center p-1'}`}>
                             <div className='flex items-center gap-1'>
@@ -49,17 +64,25 @@ const DashboardLayout: React.FC = () => {
                                 <HiFolderPlus className='text-xl' /> {isSidebarOpen && <span>Add New Post</span>}
                             </div>
                         </Link>
+                        {/* logout */}
+                        <Link to='/' onClick={handleLogOut} className={`p-2 mb-2 rounded text-red-500 inline-block hover:text-semibold hover:underline ${isSidebarOpen && 'flex gap-3 items-center p-1'}`}>
+                            <div className='flex items-center gap-1'>
+                                <HiArrowLeftOnRectangle className='text-xl' /> {isSidebarOpen && <span>Logout</span>}
+                            </div>
+                        </Link>
 
                     </div>
                 </div>
             </aside>
 
-
+            {/* main body area */}
 
             <main className={`body_wrapper px-5 
         ${isSidebarOpen ? 'w-[calc(100%-288px)] ml-72' : 'w-[calc(100%-80px)] ml-20'}`}>
                 <Outlet />
             </main>
+
+
 
         </div>
     );

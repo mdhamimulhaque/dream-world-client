@@ -19,6 +19,7 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import PostDetails from '../Pages/PostDetails/PostDetails';
 import Registration from '../Pages/Registration/Registration';
+import AdminRoute from './AdminRoute/AdminRoute';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const routes = createBrowserRouter([
@@ -92,27 +93,36 @@ const routes = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout />,
+        element: <AdminRoute>
+            <DashboardLayout />
+        </AdminRoute>
+        ,
         children: [
             {
                 path: '/dashboard/home',
-                element: <DashboardHome />
+                element:
+                    <DashboardHome />
             },
             {
                 path: '/dashboard/all-users',
-                element: <AllUsers />
+                element:
+                    <AllUsers />
             },
             {
                 path: '/dashboard/all-posts',
-                element: <DashboardAllPost />
+                element:
+                    <DashboardAllPost />
             },
             {
                 path: '/dashboard/all-comments',
-                element: <AllComments />
+                element:
+                    <AllComments />
+
             },
             {
                 path: '/dashboard/add-newPost',
-                element: <AddPost />
+                element:
+                    <AddPost />
             }
         ]
     }

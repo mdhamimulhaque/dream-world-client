@@ -28,6 +28,7 @@ const Login: React.FC = () => {
     // --->handle formlogin
     const loginSubmit: SubmitHandler<Inputs> = data => {
         // --->login with email-pass
+        setLoading(true)
         signInWithEmailAndPassword(auth, data.email, data.password)
             .then(res => {
                 if (res?.user?.email) {
@@ -42,6 +43,7 @@ const Login: React.FC = () => {
     // --->google login
     const provider = new GoogleAuthProvider();
     const handleGoogleLogIn = async () => {
+        setLoading(true)
         signInWithPopup(auth, provider)
             .then(res => {
                 setUser(res?.user);
