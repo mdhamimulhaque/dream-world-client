@@ -23,7 +23,7 @@ const AllUsers: React.FC = () => {
         <>
             {/* page title */}
             <div className='font-semibold px-4 mt-5'>
-                <h2 className='text-center text-green-500 text-4xl'>All Posts</h2>
+                <h2 className='text-center text-green-500 text-4xl'>All Users</h2>
                 <h2 className="text-xl text-gray-800 ">Total : {users?.length}</h2>
             </div>
             <div className="mx-auto pb-8 w-full max-w-7xl overflow-x-auto mt-10">

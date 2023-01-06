@@ -101,28 +101,37 @@ const routes = createBrowserRouter([
             {
                 path: '/dashboard/home',
                 element:
-                    <DashboardHome />
-            },
-            {
-                path: '/dashboard/all-users',
-                element:
-                    <AllUsers />
-            },
-            {
-                path: '/dashboard/all-posts',
-                element:
-                    <DashboardAllPost />
-            },
-            {
-                path: '/dashboard/all-comments',
-                element:
-                    <AllComments />
+                    <AdminRoute>
+                        <DashboardHome />
+                    </AdminRoute>
 
             },
             {
+                path: '/dashboard/all-users',
+                element: <AdminRoute>
+                    <AllUsers />
+                </AdminRoute>
+
+            },
+            {
+                path: '/dashboard/all-posts',
+                element: <AdminRoute>
+                    <DashboardAllPost />
+                </AdminRoute>
+
+            },
+            {
+                path: '/dashboard/all-comments',
+                element: <AdminRoute>
+                    <AllComments />
+                </AdminRoute>
+            },
+            {
                 path: '/dashboard/add-newPost',
-                element:
+                element: <AdminRoute>
                     <AddPost />
+                </AdminRoute>
+
             }
         ]
     }

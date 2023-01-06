@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
-import useAdmin from '../../hooks/useAdmin';
+
 
 type RouteProps = {
     children: JSX.Element | any;
