@@ -25,7 +25,7 @@ const AuthorPostCard = ({ authPData }: Props) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 // --->method
-                fetch(`http://localhost:5000/author/${id}`, {
+                fetch(`https://knowledge-tunes-server.vercel.app/author/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

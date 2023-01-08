@@ -8,7 +8,7 @@ const AllComments: React.FC = () => {
 
     // ---> all comments
     useEffect(() => {
-        fetch(`http://localhost:5000/all-comments`)
+        fetch(`https://knowledge-tunes-server.vercel.app/all-comments`)
             .then(res => res.json())
             .then(data => setComments(data))
     }, [comments])

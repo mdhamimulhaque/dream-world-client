@@ -67,7 +67,7 @@ const Login: React.FC = () => {
             verified: false,
         }
 
-        fetch(`http://localhost:5000/users`, {
+        fetch(`https://knowledge-tunes-server.vercel.app/users`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

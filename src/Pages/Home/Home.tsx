@@ -12,7 +12,7 @@ const Home: React.FC = () => {
             <section className="slider_area">
                 <HomeSlider />
             </section>
-            <section className='home_category px-4 grid md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center my-10'>
+            <section className='home_category px-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center my-10'>
                 <HomeCategory />
             </section>
             <section className='home_blog_wrapper'>

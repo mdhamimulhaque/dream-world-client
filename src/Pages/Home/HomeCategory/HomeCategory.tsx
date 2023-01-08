@@ -42,7 +42,7 @@ const HomeCategory: React.FC = () => {
                         <span className='flex justify-center'>
                             {categoryItem?.icon}
                         </span>
-                        <h3 className='text-2xl text-center duration-300'>{categoryItem?.name}</h3>
+                        <h3 className='text-lg lg:text-2xl text-center duration-300'>{categoryItem?.name}</h3>
                     </Link>
                 )
             }

@@ -23,7 +23,7 @@ const UpdatePost = () => {
             description: data.description
         }
 
-        fetch(`http://localhost:5000/author/${_id}`, {
+        fetch(`https://knowledge-tunes-server.vercel.app/author/${_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

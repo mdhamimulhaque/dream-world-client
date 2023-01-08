@@ -14,7 +14,7 @@ const AllUsers: React.FC = () => {
     const [users, setUsers] = useState<Users[]>([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users`)
+        fetch(`https://knowledge-tunes-server.vercel.app/users`)
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [users])

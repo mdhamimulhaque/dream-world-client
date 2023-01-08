@@ -36,7 +36,7 @@ const CommentBox = ({ commentData }: Props) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 // --->method
-                fetch(`http://localhost:5000/comments/${id}`, {
+                fetch(`https://knowledge-tunes-server.vercel.app/comments/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

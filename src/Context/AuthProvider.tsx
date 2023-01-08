@@ -34,7 +34,7 @@ const AuthProvider = ({ children }: ContextProps) => {
 
     // ---> admin check
     useEffect(() => {
-        fetch(`http://localhost:5000/users/admin/${user?.email}`)
+        fetch(`https://knowledge-tunes-server.vercel.app/users/admin/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setIsAdmin(data?.isAdmin);

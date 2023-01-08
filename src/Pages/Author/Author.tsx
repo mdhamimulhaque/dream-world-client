@@ -10,7 +10,7 @@ const Author: React.FC = () => {
     const [authorPost, setAuthorPost] = useState<PostData[]>([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/author?email=${user?.email}`)
+        fetch(`https://knowledge-tunes-server.vercel.app/author?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setAuthorPost(data))
     }, [user?.email, authorPost])

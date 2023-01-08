@@ -25,7 +25,7 @@ const DashboardPostCard = ({ post }: Props) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 // --->method
-                fetch(`http://localhost:5000/author/${id}`, {
+                fetch(`https://knowledge-tunes-server.vercel.app/author/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -47,7 +47,7 @@ const DashboardPostCard = ({ post }: Props) => {
 
     // ---> handle make popular post
     const handleMakePopularPost = (id: React.MouseEventHandler<SVGElement>) => {
-        fetch(`http://localhost:5000/posts?id=${id}`, {
+        fetch(`https://knowledge-tunes-server.vercel.app/posts?id=${id}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'

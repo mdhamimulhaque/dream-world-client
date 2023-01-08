@@ -14,12 +14,12 @@ const PostCard = ({ pData }: Props) => {
 
     return (
         <>
-            <div className="post_card_area relative bg-white hover:shadow-lg duration-300 text-gray-800 shadow-sm p-5 md:p-10 rounded">
+            <div className="post_card_area relative bg-white hover:shadow-lg w-full duration-300 text-gray-800 shadow-sm p-5 md:p-10 rounded">
                 {/* card header */}
                 <div className="card_header lg:flex gap-4">
                     <div className="header_img mb-3">
                         <img src={postImg} alt="img"
-                            className='lg:w-52 lg:h-40 object-cover'
+                            className='w-full lg:w-52 lg:h-40 object-cover'
                         />
 
                     </div>
@@ -53,7 +53,7 @@ const PostCard = ({ pData }: Props) => {
                     }
                 </div>
                 {/* card body */}
-                <div className="card_body my-4">
+                <div className="card_body my-4 overflow-hidden">
                     <p>{description.slice(0, 200)}...</p>
                 </div>
                 {/* card footer */}

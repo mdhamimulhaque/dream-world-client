@@ -25,7 +25,7 @@ const HomeBlog: React.FC = () => {
     const [postData, setPostData] = useState<PostData[]>([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/posts`)
+        fetch(`https://knowledge-tunes-server.vercel.app/posts`)
             .then(res => res.json())
             .then(data => {
                 setPostData(data);

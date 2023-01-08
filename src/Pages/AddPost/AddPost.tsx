@@ -57,7 +57,7 @@ const AddPost = () => {
 
                     //    ===> store post to database
 
-                    fetch(`http://localhost:5000/posts`, {
+                    fetch(`https://knowledge-tunes-server.vercel.app/posts`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

@@ -49,7 +49,7 @@ const PostDetails: React.FC = () => {
             category: category
         }
 
-        fetch(`http://localhost:5000/comments`, {
+        fetch(`https://knowledge-tunes-server.vercel.app/comments`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -66,7 +66,7 @@ const PostDetails: React.FC = () => {
 
     // ---> all comments
     useEffect(() => {
-        fetch(`http://localhost:5000/comments?category=${category}`)
+        fetch(`https://knowledge-tunes-server.vercel.app/comments?category=${category}`)
             .then(res => res.json())
             .then(data => setComments(data))
     }, [comments, category])

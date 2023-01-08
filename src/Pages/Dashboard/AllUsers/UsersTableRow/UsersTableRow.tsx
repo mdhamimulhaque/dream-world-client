@@ -24,7 +24,7 @@ const UsersTableRow = ({ index, user }: Props) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 // --->method
-                fetch(`http://localhost:5000/users/${id}`, {
+                fetch(`https://knowledge-tunes-server.vercel.app/users/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -46,7 +46,7 @@ const UsersTableRow = ({ index, user }: Props) => {
 
     // ---> handle make admin
     const handleMakeAdmin = (id: React.MouseEventHandler<SVGElement>) => {
-        fetch(`http://localhost:5000/make-admin?id=${id}`, {
+        fetch(`https://knowledge-tunes-server.vercel.app/make-admin?id=${id}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'

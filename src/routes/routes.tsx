@@ -34,17 +34,17 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/all-posts',
-                loader: () => fetch(`http://localhost:5000/posts`),
+                loader: () => fetch(`https://knowledge-tunes-server.vercel.app/posts`),
                 element: <AllPosts />
             },
             {
                 path: '/category/:name',
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.name}`),
+                loader: ({ params }) => fetch(`https://knowledge-tunes-server.vercel.app/category/${params.name}`),
                 element: <Category />
             },
             {
                 path: '/post/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/post/${params.id}`),
+                loader: ({ params }) => fetch(`https://knowledge-tunes-server.vercel.app/post/${params.id}`),
                 element: <PostDetails />
             },
             {
@@ -84,7 +84,7 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/author/update-post/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/post/${params.id}`),
+                loader: ({ params }) => fetch(`https://knowledge-tunes-server.vercel.app/post/${params.id}`),
                 element: <PrivateRoute>
                     <UpdatePost />
                 </PrivateRoute>

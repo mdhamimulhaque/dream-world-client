@@ -9,7 +9,7 @@ import { PostData } from '../../../Pages/Home/HomeBlog/HomeBlog';
 const MainSidebar: React.FC = () => {
     const [popularPosts, setPopularPosts] = useState<PostData[]>([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/popular-posts`)
+        fetch(`https://knowledge-tunes-server.vercel.app/popular-posts`)
             .then(res => res.json())
             .then(data => {
                 setPopularPosts(data);
