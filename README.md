@@ -6,6 +6,8 @@ Live : [KnowledgeTunes](https://knowledgetunes-13b9a.web.app/?fbclid=IwAR3mXTZPR
 Email : admin@gmail.com
 Password : 123456
 
+<img src="./ReadmeDocs/knowledgeTunes.jpg" />
+
 ### `Tools used` :
 <h4>Client site :</h4>
 <ul>
@@ -31,4 +33,3 @@ Password : 123456
 <li>Vercel(for hosting)</li>
 </ul>
 
-<img src="./ReadmeDocs/knowledgeTunes.jpg" />
