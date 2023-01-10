@@ -33,27 +33,27 @@ const Header: React.FC = () => {
                 {/* logo */}
                 <Link to="/" className="flex flex-shrink-0 title-font font-medium items-center text-gray-900 md:mb-0">
                     <img className='w-8' src={logo} alt="img" />
-                    <span className="ml-3 text-xl text-gray-100 font-semibold antialiased">KnowledgeTunes</span>
+                    <span className="ml-3 text-base lg:text-xl text-gray-100 font-semibold antialiased">KnowledgeTunes</span>
                 </Link>
                 {/* Navbar */}
-                <nav className="hidden md:ml-auto md:flex flex-wrap items-center justify-center text-base tracking-wide">
-                    <Link to="/" className="mr-8 hover:text-green-400">Home</Link>
-                    <Link to="/all-posts" className="mr-8 hover:text-green-400">All Posts</Link>
+                <nav className="hidden md:ml-auto md:flex flex-wrap items-center justify-center text-sm lg:text-base tracking-wide">
+                    <Link to="/" className="mr-2 md::mr-4 lg:mr-8 hover:text-green-400">Home</Link>
+                    <Link to="/all-posts" className="mr-2 md::mr-4 lg:mr-8 hover:text-green-400">All Posts</Link>
                     {
                         user?.email &&
                         <>
-                            <Link to="/author" className="mr-8 hover:text-green-400">Author</Link>
-                            <Link to="/author/add-post" className="mr-8 hover:text-green-400">Add Post</Link>
+                            <Link to="/author" className="mr-2 md::mr-4 lg:mr-8 hover:text-green-400">Author</Link>
+                            <Link to="/author/add-post" className="mr-2 md::mr-4 lg:mr-8 hover:text-green-400">Add Post</Link>
                         </>
                     }
                     {
                         isAdmin &&
-                        <Link to="/dashboard/home" className="mr-8 hover:text-green-400">Dashboard</Link>
+                        <Link to="/dashboard/home" className="mr-2 md::mr-4 lg:mr-8 hover:text-green-400">Dashboard</Link>
                     }
 
 
-                    <Link to="/about-us" className="mr-8 hover:text-green-400">About Us</Link>
-                    <Link to="/contact" className="mr-8 hover:text-green-400">Contact</Link>
+                    <Link to="/about-us" className="mr-2 md::mr-4 lg:mr-8 hover:text-green-400">About Us</Link>
+                    <Link to="/contact" className="mr-2 md::mr-4 lg:mr-8 hover:text-green-400">Contact</Link>
 
 
                 </nav>
