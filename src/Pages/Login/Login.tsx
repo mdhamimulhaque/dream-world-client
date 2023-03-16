@@ -101,6 +101,11 @@ const Login: React.FC = () => {
                             >
                                 <img src={Logo} alt="logo" className='w-10' /> <span className='font-semibold text-xl '>KnowledgeTunes</span>
                             </Link>
+                            <article className='my-3 border border-red-500'>
+                                <h4 className='text-red-500'>For Admin Role:</h4>
+                                <small>Email : admin@gmail.com</small> <br />
+                                <small>Password : 123456</small>
+                            </article>
 
                             <form onSubmit={handleSubmit(loginSubmit)}>
                                 <div className="mb-6">
